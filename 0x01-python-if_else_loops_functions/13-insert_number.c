@@ -47,5 +47,9 @@ ins->next = mand;
 *head = ins;
 }
 }
+else
+{
+*head = ins;
+}
 return (NULL);
 }
