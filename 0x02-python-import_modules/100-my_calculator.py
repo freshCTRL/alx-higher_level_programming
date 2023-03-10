@@ -16,10 +16,10 @@ if __name__ == "__main__":
             print("{:d} {} {:d} = {:d}".format(a, operator, b, add(a, b)))
         elif operator == '-':
             print("{:d} {} {:d} = {:d}".format(a, operator, b, sub(a, b)))
-        elif operator == 'x':
+        elif operator == '*':
             print("{:d} {} {:d} = {:d}".format(a, operator, b, mul(a, b)))
         elif operator == '/':
             print("{:d} {} {:d} = {:d}".format(a, operator, b, div(a, b)))
         else:
-            print("Unknown operator. Available operators: +, -, x and /")
+            print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
