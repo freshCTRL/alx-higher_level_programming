@@ -9,7 +9,7 @@ if __name__ == "__main__":
     names = names.sort()
 
     for i in names:
-        if i[0:2] != "__":
+        if i[:2] != "__":
             print(i)
         else:
             continue
