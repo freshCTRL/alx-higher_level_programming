@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 {
 char mylist[50];
 
-if (*head == NULL)
+if (*head == 0)
 {
 return (1);
 }
