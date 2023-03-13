@@ -15,6 +15,8 @@ if (*head == 0)
 {
 return (1);
 }
+else
+{
 int n = 0;
 while (*head)
 {
@@ -42,6 +44,7 @@ return (1);
 }
 i++;
 n--;
+}
 }
 return (0);
 }
