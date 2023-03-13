@@ -4,4 +4,5 @@ def no_c(my_string):
     for i in myland:
         if i == "C" or i == "c":
             myland.remove(i)
-    return ''.join(myland)
+    new_string = ''.join(myland)
+    return new_string
