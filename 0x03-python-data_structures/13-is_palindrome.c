@@ -10,13 +10,11 @@
 int is_palindrome(listint_t **head)
 {
 char mylist[50];
-listint_t *mand;
-mand = *head;
 int n = 0;
-while (mand)
+while (*head)
 {
-mylist[n] = mand->n;
-mand = mand->next;
+mylist[n] = (*head)->n;
+*head = (*head)->next;
 n++;
 }
 n--;
