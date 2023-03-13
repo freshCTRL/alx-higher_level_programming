@@ -10,6 +10,11 @@
 int is_palindrome(listint_t **head)
 {
 char mylist[50];
+
+if (*head == NULL)
+{
+return (1);
+}
 int n = 0;
 while (*head)
 {
