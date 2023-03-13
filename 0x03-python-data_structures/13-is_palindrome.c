@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdlib.h>
 /**
  * is_palindrome - Entry point.
  * @head: argument to is_palindrome
