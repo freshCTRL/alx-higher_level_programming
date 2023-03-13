@@ -6,4 +6,4 @@ def print_reversed_list_integer(my_list=[]):
         my_list[len(my_list) - 1 - i] = item
 
     for tool in my_list:
-        print("{:d}".format(tool))
+        print("{}".format(tool))
