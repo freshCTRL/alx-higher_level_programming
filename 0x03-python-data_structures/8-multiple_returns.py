@@ -5,7 +5,7 @@ def multiple_returns(sentence):
         sentence = list(sentence)
         sentence.append(None)
         sentence = ''.join(sentence)
-        answer = (length, sentence)
+        answer = (int(length), sentence)
         return answer
     else:
         sentence = list(sentence)
@@ -13,5 +13,5 @@ def multiple_returns(sentence):
         sentence.clear()
         sentence = store
         sentence = ''.join(sentence)
-        answer = (length, sentence)
+        answer = (int(length), sentence)
         return answer
