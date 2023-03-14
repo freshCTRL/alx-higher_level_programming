@@ -1,17 +1,6 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    length = len(sentence)
-    if length == 0:
-        sentence = list(sentence)
-        sentence.append(None)
-        sentence = ''.join(sentence)
-        answer = (int(length), sentence)
-        return answer
+    if len(sentence) == 0:
+        return (len(sentence), None)
     else:
-        sentence = list(sentence)
-        store = sentence[:1]
-        sentence.clear()
-        sentence = store
-        sentence = ''.join(sentence)
-        answer = (int(length), sentence)
-        return answer
+        return (len(sentence), sentence[0])
