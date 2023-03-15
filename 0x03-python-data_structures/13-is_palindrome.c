@@ -15,6 +15,11 @@ if (*head == NULL)
 return (1);
 }
 else
+if (*head->next == NULL)
+{
+return (1);
+}
+else
 {
 int count = 0;
 man = *head;
