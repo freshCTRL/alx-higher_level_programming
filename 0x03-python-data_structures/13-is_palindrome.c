@@ -1,12 +1,10 @@
 #include "lists.h"
-
 /**
  * is_palindrome - Entry point.
  * @head: argument to is_palindrome
  *
  * Return: (0) Success
  */
-
 int is_palindrome(listint_t **head)
 {
 listint_t *first_start;
