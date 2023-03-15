@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
+
 /**
  * is_palindrome - Entry point.
  * @head: argument to is_palindrome
@@ -9,42 +9,59 @@
 
 int is_palindrome(listint_t **head)
 {
-char mylist[50];
+listint_t *first_start;
+listint_t *second_start;
+listint_t *p;
+listint_t *q;
 
-if (*head == 0)
-{
+p = *head;
+q = *head;
+if (p == NULL)
 return (1);
-}
-else
+if (p != NULL)
 {
-int n = 0;
-while (*head)
+while (1)
 {
-mylist[n] = (*head)->n;
-*head = (*head)->next;
-n++;
+p = p->next->next;
+if (p == NULL)
+{
+second_start = q->next;
+break;
 }
-n--;
+if (p->next == NULL)
+{
+second_start = q->next->next;
+break;
+}
+q = q->next;
+}
+q->next = NULL;
+first_start = *head;
+listint_t *temp2;
+listint_t *temp = NULL;
+while (second_start != NULL)
+{
+temp2 = second_start->next;
+second_start->next = temp;
+temp = second_start;
+second_start = temp2;
+}
+second_start = temp;
 int stop = 0;
-int k = n - 1;
-int i = 0;
-while ((i <= (k / 2)) && (stop != 1))
+while (first_start != NULL && stop != 1)
 {
-if (mylist[i] != mylist[n])
+if (first_start->n == second_start->n)
 {
-stop = 1;
-return (0);
+first_start = first_start->next;
+second_start = second_start->next;
 }
 else
-{
-if (i == (k / 2))
-{
+stop = 1;
+}
+if (stop == 1)
+return (0);
+else
 return (1);
-}
-}
-i++;
-n--;
-}
 }
 return (0);
 }
