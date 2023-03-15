@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * is_palindrome - Entry point.
  * @head: argument to is_palindrome
@@ -7,59 +8,42 @@
  */
 int is_palindrome(listint_t **head)
 {
-listint_t *first_start;
-listint_t *second_start;
-listint_t *p;
-listint_t *q;
+int i = 0, j;
+listint_t *front, *rear, *man;
+if (*head == NULL)
+{
+return (1);
+}
+else
+{
+int count = 0;
+man = *head;
+while (man)
+{
+man = man->next;
+count += 1;
+}
 
-p = *head;
-q = *head;
-if (p == NULL)
-return (1);
-if (p != NULL)
+while (i != count / 2)
 {
-while (1)
+front = rear = *head;
+for (j = 0; j < i; j++)
 {
-p = p->next->next;
-if (p == NULL)
-{
-second_start = q->next;
-break;
+front = front->next;
 }
-if (p->next == NULL)
+for (j = 0; j < count - (i + 1); j++)
 {
-second_start = q->next->next;
-break;
+rear = rear->next;
 }
-q = q->next;
-}
-q->next = NULL;
-first_start = *head;
-listint_t *temp2;
-listint_t *temp = NULL;
-while (second_start != NULL)
+if (front->n != rear->n)
 {
-temp2 = second_start->next;
-second_start->next = temp;
-temp = second_start;
-second_start = temp2;
-}
-second_start = temp;
-int stop = 0;
-while (first_start != NULL && stop != 1)
-{
-if (first_start->n == second_start->n)
-{
-first_start = first_start->next;
-second_start = second_start->next;
+return (0);
 }
 else
-stop = 1;
+{
+i++;
 }
-if (stop == 1)
-return (0);
-else
+}
+}
 return (1);
-}
-return (0);
 }
