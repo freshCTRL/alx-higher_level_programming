@@ -10,17 +10,7 @@ int is_palindrome(listint_t **head)
 {
 int i = 0, j;
 listint_t *front, *rear, *man;
-if (*head == NULL)
-{
-return (1);
-}
-else
-if (*head->next == NULL)
-{
-return (0);
-}
-else
-{
+
 int count = 0;
 man = *head;
 while (man)
@@ -47,7 +37,6 @@ return (0);
 else
 {
 i++;
-}
 }
 }
 return (1);
