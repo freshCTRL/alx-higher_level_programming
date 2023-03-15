@@ -17,7 +17,7 @@ return (1);
 else
 if (*head->next == NULL)
 {
-return (1);
+return (0);
 }
 else
 {
