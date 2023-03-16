@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * is_palindrome - Entry point.
  * @head: argument to is_palindrome
@@ -8,41 +7,54 @@
  */
 int is_palindrome(listint_t **head)
 {
-int i = 0, j;
-listint_t *front, *rear, *man;
-
-int s, k, l;
-int count = 0;
+int i = 0, j, count = 0;
+listint_t *front;
+listint_t *rear;
+listint_t *man;
 man = *head;
 while (man)
 {
 man = man->next;
 count++;
 }
-s = count / 2;
-while (i != s)
+
+int stop = 0;
+while ((i != count / 2) && (stop != 1))
 {
-front = rear = *head;
-for (j = 0; j < i; j++)
+front = *head;
+rear = *head;
+
+j = 0;
+while (j < i)
 {
 front = front->next;
+j++;
 }
-l = i + 1;
-k = count - l;
-for (j = 0; j < k; j++)
+
+j = 0;
+while (j < count - (i + 1))
 {
 rear = rear->next;
+j++;
 }
+
 if (front->n != rear->n)
 {
-return (0);
+stop = 1;
 }
 else
 {
 i++;
 }
 }
+if (stop == 1)
+{
+return (0);
+}
+else
+{
 return (1);
+}
 
 return (0);
 }
