@@ -10,25 +10,27 @@
 int is_palindrome(listint_t **head)
 {
 
-int i, j, count, stop;
+int i, j, k, count, stop;
 listint_t *front;
 listint_t *rear;
 listint_t *man;
 
 count = 0;
 man = *head;
-while (man != NULL)
+while (man)
 {
 man = man->next;
 count++;
 }
+count--;
 
 i = 0;
+k = count / 2;
 stop = 0;
-front = head;
-rear = head;
-while ((i != count / 2) && (stop != 1))
+while ((i < k) && (stop != 1))
 {
+
+front = *head;
 j = 0;
 while (j < i)
 {
@@ -36,8 +38,9 @@ front = front->next;
 j++;
 }
 
+rear = *head;
 j = 0;
-while (j < count - (i + 1))
+while (j <= count - i - 1)
 {
 rear = rear->next;
 j++;
@@ -49,7 +52,7 @@ stop = 1;
 }
 else
 {
-i++;
+i++; 
 }
 }
 
