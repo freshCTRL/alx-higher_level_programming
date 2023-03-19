@@ -15,8 +15,6 @@ listint_t *front;
 listint_t *rear;
 listint_t *man;
 
-if (*head != NULL)
-{
 count = 0;
 man = *head;
 while (man != NULL)
@@ -59,6 +57,9 @@ if (stop == 1)
 {
 return (0);
 }
-}
+else
+{
 return (1);
+}
+return (0);
 }
