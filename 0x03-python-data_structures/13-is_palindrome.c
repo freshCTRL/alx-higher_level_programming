@@ -7,23 +7,30 @@
  */
 int is_palindrome(listint_t **head)
 {
-int i = 0, j, count = 0;
+int i, j, count, stop;
 listint_t *front;
 listint_t *rear;
 listint_t *man;
+
+count = 0;
 man = *head;
-while (man)
+while (man != NULL)
 {
 man = man->next;
 count++;
 }
 
-int stop = 0;
+if (*head == NULL)
+{
+return (1);
+}
+else
+{
+stop = 0;
+front = head;
+rear = head;
 while ((i != count / 2) && (stop != 1))
 {
-front = *head;
-rear = *head;
-
 j = 0;
 while (j < i)
 {
@@ -47,6 +54,7 @@ else
 i++;
 }
 }
+
 if (stop == 1)
 {
 return (0);
@@ -55,6 +63,6 @@ else
 {
 return (1);
 }
-
+}
 return (0);
 }
