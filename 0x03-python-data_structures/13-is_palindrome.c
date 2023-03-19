@@ -27,7 +27,7 @@ count--;
 i = 0;
 k = count / 2;
 stop = 0;
-while ((i < k) && (stop != 1))
+while ((i < k)&&(stop != 1))
 {
 
 front = *head;
@@ -52,7 +52,7 @@ stop = 1;
 }
 else
 {
-i++; 
+i++;
 }
 }
 
