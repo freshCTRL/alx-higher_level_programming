@@ -20,11 +20,7 @@ man = man->next;
 count++;
 }
 
-if (*head == NULL)
-{
-return (1);
-}
-else
+if (*head != NULL)
 {
 stop = 0;
 front = head;
@@ -59,10 +55,6 @@ if (stop == 1)
 {
 return (0);
 }
-else
-{
+}
 return (1);
-}
-}
-return (0);
 }
