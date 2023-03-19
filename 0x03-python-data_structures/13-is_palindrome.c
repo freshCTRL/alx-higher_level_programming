@@ -14,6 +14,8 @@ if ((*head == NULL) || ((*head)->next == NULL))
 {
 return (1);
 }
+else
+{
 count = 0;
 man = *head;
 while (man)
@@ -49,5 +51,6 @@ i++;
 if (stop != 1)
 return (1);
 
+}
 return (0);
 }
