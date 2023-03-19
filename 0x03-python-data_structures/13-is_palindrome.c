@@ -22,6 +22,7 @@ count++;
 
 if (*head != NULL)
 {
+i = 0;
 stop = 0;
 front = head;
 rear = head;
