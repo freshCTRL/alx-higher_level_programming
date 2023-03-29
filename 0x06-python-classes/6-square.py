@@ -9,14 +9,11 @@ class Square:
         """initialises the square.
         Args:
             size: length of side of the square
+            position: position of the square
         Raises:
             TypeError: if size is not an integer
             ValueError: If size < 0
         """
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
         self.__position = position
 
@@ -55,14 +52,11 @@ class Square:
     def my_print(self):
         """prints the square in #'s"""
         if self.__size != 0:
-            # for y in range(self.__position[1]):
-            #     print()
+            for y in range(self.__position[1]):
+                print()
             for i in range(self.__size):
                 for x in range(self.__position[0]):
-                    if self.position[1] <= 0:
-                        print(' ', end='')
-                    else:
-                        print('_', end='')
+                    print(' ', end='')
                 for j in range(self.__size):
                     print('#', end='')
                 print()
