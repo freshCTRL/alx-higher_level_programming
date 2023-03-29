@@ -4,9 +4,9 @@
 
 class Square:
     """square class"""
-
-    def __init__(self, size):
-        """Constructor.
+    
+    def __init__(self, size=0):
+        """initialises the square.
         Args:
             size: length of side of the square
         Raises:
