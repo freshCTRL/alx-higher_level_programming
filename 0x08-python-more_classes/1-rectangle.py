@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """a rectangle Module
 
 THis module take width of a rectangle, it's height and
