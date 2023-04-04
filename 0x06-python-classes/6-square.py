@@ -14,9 +14,25 @@ class Square:
         Args:
             size: length of side of the square
             position: position of the square
+        Raises 1:
+            TypeError: if size is not an integer
+            ValueError: If size < 0
+        Raises 2:
+            TypeError: if position is not a tuple of 2 positive integers
         """
 
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
+
+        if type(position) != tuple or len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(position[0]) != int or type(position[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
