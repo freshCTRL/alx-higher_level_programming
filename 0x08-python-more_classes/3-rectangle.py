@@ -102,11 +102,12 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """the function goes in here when it is call
-        with a print function or str
+        """a magic method the returns a string when the
+        str or print function is call
 
         """
-
+        if self.__width == 0 or self.__height == 0:
+            return str()
         a = []
         for i in range(self.width):
             a.append('#')
@@ -117,4 +118,4 @@ class Rectangle:
             if i != self.__height-1:
                 c.append('\n')
         c = ''.join(c)
-        return c
+        return str(c)
