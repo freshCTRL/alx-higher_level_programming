@@ -31,8 +31,8 @@ class Rectangle:
     def width(self, value):
         """set the value of the height of a rectangle
         Raises:
-            TypeError: width must be an integer
-            ValueError: width must be >= 0
+            TypeError:
+            ValueError:
 
         """
 
@@ -53,8 +53,8 @@ class Rectangle:
     def height(self, value):
         """set the value of the height
         Raises:
-            TypeError: height must be an integer
-            ValueError: height must be >= 0
+            TypeError:
+            ValueError:
 
         """
 
@@ -63,3 +63,15 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """calculate the area of a rectangle
+        """
+        return self.width * self.height
+
+    def perimeter(self):
+        """calculate the perimeter of a rectangle
+        """
+        if self.width == 0 or self.height == 0:
+            return 0
+        return 2 * (self.width + self.height)
