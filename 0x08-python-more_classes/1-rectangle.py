@@ -31,8 +31,8 @@ class Rectangle:
     def width(self, value):
         """set the value of the height of a rectangle
         Raises:
-            TypeError:
-            ValueError:
+            TypeError: if width is not an integer
+            ValueError: if width is not >= 0
 
         """
 
@@ -53,8 +53,8 @@ class Rectangle:
     def height(self, value):
         """set the value of the height
         Raises:
-            TypeError:
-            ValueError:
+            TypeError: if height is not an integer
+            ValueError: if height is not >= 0
 
         """
 
