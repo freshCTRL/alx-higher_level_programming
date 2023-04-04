@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""a Rectangle Module
+"""a rectangle Module
 
 """
 
 
 class Rectangle:
-    """a Rectangle class
+    """a rectangle class
     """
 
     def __init__(self, width=0, height=0):
-        """Initialises a Rectangle class.
+        """Initialises a rectangle class.
         Args:
             width: stores the width of the rectangle
             height: stores the height of the rectangle
@@ -21,6 +21,7 @@ class Rectangle:
         Raises 2:
             TypeError: if height is not an integer
             ValueError: if height is not >= 0
+        
         """
 
         if type(width) != int:
