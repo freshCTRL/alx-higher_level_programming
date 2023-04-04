@@ -11,6 +11,7 @@ it takes the position parsed and position the square
 
 class Rectangle:
     """a Rectangle class
+
     """
 
     def __init__(self, width=0, height=0):
