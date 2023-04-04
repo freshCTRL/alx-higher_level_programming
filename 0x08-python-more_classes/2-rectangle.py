@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """a Rectangle Module
-
 """
 
 
 class Rectangle:
     """a Rectangle class
-
     """
 
     def __init__(self, width=0, height=0):
@@ -14,7 +12,6 @@ class Rectangle:
         Args:
             width: stores the width of the rectangle
             height: stores the height of the rectangle
-
         """
 
         self.__height = height
@@ -23,7 +20,6 @@ class Rectangle:
     @property
     def width(self):
         """retrieves the value of width
-
         """
         return self.__width
 
@@ -33,7 +29,6 @@ class Rectangle:
         Raises:
             TypeError:
             ValueError:
-
         """
 
         if type(value) != int:
@@ -45,7 +40,6 @@ class Rectangle:
     @property
     def height(self):
         """retrieves the value of height
-
         """
         return self.__height
 
@@ -55,7 +49,6 @@ class Rectangle:
         Raises:
             TypeError:
             ValueError:
-
         """
 
         if type(value) != int:
