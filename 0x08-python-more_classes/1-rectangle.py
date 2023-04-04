@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """a Rectangle Module
 
 """
@@ -22,7 +22,17 @@ class Rectangle:
             TypeError: if height is not an integer
             ValueError: if height is not >= 0
         """
+
+        if type(width) != int:
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
         self.__width = width
+        
+        if type(height) != int:
+            raise TypeError("width must be an integer")
+        if height < 0:
+            raise ValueError("width must be >= 0")
         self.__height = height
 
     @property
