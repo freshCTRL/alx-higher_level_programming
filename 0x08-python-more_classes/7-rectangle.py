@@ -15,6 +15,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initialises a Rectangle class.
@@ -43,6 +44,7 @@ class Rectangle:
         self.__height = height
 
         Rectangle.number_of_instances += 1
+        self.print_symbol = Rectangle.print_symbol
 
     @property
     def width(self):
@@ -101,7 +103,7 @@ class Rectangle:
 
         """
 
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
@@ -110,11 +112,13 @@ class Rectangle:
         str or print function is call
 
         """
+
+        s = str(self.print_symbol)
         if self.__width == 0 or self.__height == 0:
             return str()
         a = []
         for i in range(self.width):
-            a.append('#')
+            a.append(s)
         a = ''.join(a)
         c = []
         for i in range(self.__height):
