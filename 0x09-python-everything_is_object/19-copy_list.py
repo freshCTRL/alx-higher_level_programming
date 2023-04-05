@@ -1,3 +1,3 @@
 def copy_list(l):
-    k = l
-    return k
+k = l
+return k
