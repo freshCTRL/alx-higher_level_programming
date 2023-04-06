@@ -38,14 +38,13 @@ elif int(N) < 4:
 
 elif N.isnumeric() and int(N) >= 4:
     """Checks if argument passed is an integer and
-    if it is greater than 4
+    if >= 4
 
     """
 
     N = int(N)
-    b = N - 2
     j = []
-    for w in range(b):
+    for w in range(N - 2):
         s = []
         k = w + 1
         for i in range(N):
