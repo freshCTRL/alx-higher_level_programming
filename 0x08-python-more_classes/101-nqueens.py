@@ -1,18 +1,47 @@
 #!/usr/bin/python3
+""" This program takes an integer input from
+    the user and solves the N queens problem
+
+    """
+
 from sys import argv
+"""This line import sys to get the command
+    line argument
+
+    """
 
 if len(argv) != 2:
+    """Checks if the length of argument passed
+    is not more than 2
+
+    """
+
     print("Usage: nqueens N")
     exit(1)
 
 N = argv[1]
 if not N.isnumeric():
+    """Checks if the argument passed is an integer
+
+    """
+
     print("N must be a number")
     exit(1)
+
 elif int(N) < 4:
+    """checks if the value of N is less than 4
+
+    """
+
     print("N must be at least 4")
     exit(1)
+
 elif N.isnumeric() and int(N) >= 4:
+    """Checks if argument passed is an integer and
+    if it is greater than 4
+
+    """
+
     N = int(N)
     j = []
     for w in range(N - 2):
