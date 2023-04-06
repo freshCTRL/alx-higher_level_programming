@@ -4,22 +4,22 @@
 
     """
 
-from sys import argv
+import sys
 """This line import sys to get the command
     line argument
 
     """
 
-if len(argv) != 2:
+if len(sys.argv) != 2:
     """Checks if the length of argument passed
     is not more than 2
 
     """
 
-    print("Usage: nqueens N")
+    print("Usage: {} N".format(sys.argv[0]))
     exit(1)
 
-N = argv[1]
+N = sys.argv[1]
 if not N.isnumeric():
     """Checks if the argument passed is an integer
 
@@ -43,8 +43,9 @@ elif N.isnumeric() and int(N) >= 4:
     """
 
     N = int(N)
+    b = N - 2
     j = []
-    for w in range(N - 2):
+    for w in range(b):
         s = []
         k = w + 1
         for i in range(N):
