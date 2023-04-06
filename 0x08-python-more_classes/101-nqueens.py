@@ -16,7 +16,7 @@ if len(sys.argv) != 2:
 
     """
 
-    print("Usage: {} N".format(sys.argv[0]))
+    print("Usage: nqueens N")
     exit(1)
 
 N = sys.argv[1]
