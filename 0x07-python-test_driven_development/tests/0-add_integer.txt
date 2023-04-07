@@ -1,0 +1,37 @@
+"""
+This module is explaining what you can do with the function
+add_integer.
+
+>>> from 0-add_integer import add_integer
+
+Now use it:
+
+>>> add_integer(2, 3)
+5
+
+>>> add_integer("school", 7)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(7, "school")
+Traceback (most recent call last):
+   ...
+TypeError: b must be an integer
+
+>>> add_integer(8)
+106
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(-2, 100)
+98
+
+>>> add_integer(2, 100.3)
+102
+
+"""
