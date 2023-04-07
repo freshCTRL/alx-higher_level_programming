@@ -1,0 +1,16 @@
+"""
+
+>>> example = __import__('3-say_my_name').say_my_name
+
+>>> example("John", "Smith")
+My name is John Smith
+
+>>> example("Bob")
+My name is Bob 
+
+>>> example(12, "White")
+Tracebacks most recent call last:
+    ...
+TypeError: first_name must be a string
+
+"""
