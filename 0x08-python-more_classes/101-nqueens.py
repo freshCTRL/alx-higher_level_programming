@@ -33,16 +33,16 @@ N must be at least 4
 
 if len(argv) != 2:
     print("Usage: nqueens N")
-    sys.exit(1)
+    exit(1)
 
 N = argv[1]
 if not N.isnumeric():
     print("N must be a number")
-    sys.exit(1)
+    exit(1)
 
 elif int(N) < 4:
     print("N must be at least 4")
-    sys.exit(1)
+    exit(1)
 
 elif N.isnumeric() and int(N) >= 4:
     N = int(N)
