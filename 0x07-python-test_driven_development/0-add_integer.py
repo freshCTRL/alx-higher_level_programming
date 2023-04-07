@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""This module contains a function that add two integers(a and b).
-if a float is passed as an argument it cast it into an int.
-if a or b is not an integer it raises a TypeError.
+"""This module contains a function that add two integers(a and b),
+if a float is passed as an argument it cast it into integer
+if either of the two argument is a float, an integer equivalent is used
 """
 
 
@@ -15,8 +15,11 @@ def add_integer(a, b=98):
     if type(b) == float:
         b = int(b)
 
-    if type(a) != int:
-        raise TypeError("a must be an integer")
-    if type(b) != int:
-        raise TypeError("b must be an integer")
-    return int(a+b)
+    try:
+        res = a + b
+        return int(res)
+    except:
+        if type(a) != int:
+            raise TypeError("a must be an integer")
+        if type(b) != int:
+            raise TypeError("b must be an integer")
