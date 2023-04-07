@@ -9,6 +9,7 @@ def add_integer(a, b=98):
     """a function that adds two numbers.
     Raises: TypeError("if argument passed is not an integer")
     """
+
     if type(a) == float:
         a = int(a)
     if type(b) == float:
