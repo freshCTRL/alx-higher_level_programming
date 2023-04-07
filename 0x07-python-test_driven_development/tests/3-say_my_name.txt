@@ -9,7 +9,7 @@ My name is John Smith
 My name is Bob 
 
 >>> example(12, "White")
-Tracebacks most recent call last:
+Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
 
