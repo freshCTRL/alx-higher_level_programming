@@ -2,37 +2,36 @@
 This module is explaining what you can do with the function
 add_integer.
 
->>> example = __import__('0-add_integer')
+>>> example = __import__('0-add_integer').add_integer
 
 Now use it:
 
->>> example.add_integer(2, 3)
+>>> example(2, 3)
 5
 
->>> example.add_integer("school", 7)
+>>> example("school", 7)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
->>> example.add_integer(7, "school")
+>>> example(7, "school")
 Traceback (most recent call last):
    ...
 TypeError: b must be an integer
 
->>> example.add_integer(8)
+>>> example(8)
 106
 
->>> example.add_integer(100.3, -2)
+>>> example(100.3, -2)
 98
 
->>> example.add_integer(100, -2)
+>>> example(100, -2)
 98
 
->>> example.add_integer(-2, 100)
+>>> example(-2, 100)
 98
 
->>> example.add_integer(2, 100.3)
+>>> example(2, 100.3)
 102
 
 """
-
