@@ -14,4 +14,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer("house"), "u")
         self.assertEqual(max_integer(), None)
         self.assertEqual(max_integer({}), None)
+        self.assertEqual(max_integer([8,3,1]), 8)
+        self.assertEqual(max_integer([3]), 3)
         self.assertRaises(TypeError, max_integer(), {1, 2, 3})
