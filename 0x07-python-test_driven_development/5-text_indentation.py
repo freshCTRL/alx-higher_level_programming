@@ -16,6 +16,6 @@ def text_indentation(text):
     text = list(text)
     for i in range(len(text)):
         if text[i] == '.' or text[i] == '?' or text[i] == ':':
-            text.insert(i+1, '\n\n')
+            text.insert(i+2, '\n\n')
     text = "".join(text)
     print(text)
