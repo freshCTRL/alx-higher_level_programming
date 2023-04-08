@@ -21,21 +21,21 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if type(matrix) != list:
-        raise TypeError("matrix must be a matrix (list of lists)"
-                        " of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) "
+                        "of integers/floats")
 
     n = []
     for i in matrix:
         if type(i) != list:
-            raise TypeError("matrix must be a matrix (list of lists)"
-                            " of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists) "
+                            "of integers/floats")
         m = []
         for j in i:
             if type(j) == int or type(j) == float:
                 s = j / div
                 m.append(round(s, 2))
             else:
-                raise TypeError("matrix must be a matrix (list of lists)"
-                                " of integers/floats")
+                raise TypeError("matrix must be a matrix (list of lists) "
+                                "of integers/floats")
         n.append(m)
     return n
