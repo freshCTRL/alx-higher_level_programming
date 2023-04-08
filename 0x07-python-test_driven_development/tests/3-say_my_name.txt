@@ -1,16 +1,30 @@
 """
+This module takes input of first_name and last_name
+and prints the full name. if input is not string
+it raises a ValueError else it prints and last name is not
+provided it prints the first name.
 
->>> example = __import__('3-say_my_name').say_my_name
+>>> example = __import__("3-say_my_name").say_my_name
 
 >>> example("John", "Smith")
 My name is John Smith
 
->>> example("Bob")
-My name is Bob 
+>>> example("John")
+My name is John 
+
+>>> example((["Bob"]), "houston")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
 
 >>> example(12, "White")
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
+
+>>> example()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 """
