@@ -18,4 +18,4 @@ def text_indentation(text):
         if text[i] == '.' or text[i] == '?' or text[i] == ':':
             text.insert(i+2, '\n\n')
     text = "".join(text)
-    print(text)
+    print(text, end="")
