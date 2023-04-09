@@ -40,4 +40,12 @@ Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
+>>> example(4, 1e100)
+10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815108
+
+>>> example(4, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
 """
