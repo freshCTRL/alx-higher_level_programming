@@ -2,15 +2,15 @@
 THis file is a doctest for tsk 1, it tests on
 strings and integers when used with the function
 
->>> example = __import__('0-lookup').lookup
+>>> example = __import__('1-my_list').MyList
 
->>> hu = MyList()
+>>> hu = example()
 
 >>> hu.append(None)
 
 >>> hu.append(False)
 
->>> print(hu)
+>>> hu
 [None, False]
 
 >>> hu.print_sorted()
@@ -18,13 +18,13 @@ Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'bool' and 'NoneType'
 
->>> du = MyList()
+>>> du = example()
 
 >>> du.append(5)
 
 >>> du.append(4)
 
->>> print(du)
+>>> du
 [5, 4]
 
 >>> du.print_sorted()
