@@ -11,27 +11,28 @@ class list:
     def __init__(self):
         """Initialises the list class
         """
-        pass
+        list.my_list = []
 
 
 class MyList(list):
     """a Class that inherit from list
     """
+    def __init__(self):
+        super().__init__()
 
     def append(self, value):
         """a function that append the value passed
         """
-        super().my_list.append(value)
+        list.my_list.append(value)
 
     def __str__(self):
         """always called when the str method is
         called or the print function
         """
-        return str(MyList.my_list)
+        return str(list.my_list)
 
-    @staticmethod
     def print_sorted():
         """a function that prints the list
         but sorted (ascending sort)
         """
-        print(sorted(MyList.my_list))
+        print(sorted(list.my_list))
