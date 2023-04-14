@@ -23,6 +23,12 @@ def pascal_triangle(n):
             s.append(1)
             k.append(s)
             continue
+        if i == 2:
+            s.append(1)
+            s.append(2)
+            s.append(1)
+            k.append(s)
+            continue
         f = u = 1
         a = 0
         s.append(1)
