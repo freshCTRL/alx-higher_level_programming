@@ -39,5 +39,5 @@ class Student:
         for ky, valu in json.items():
             for key, values in self.__dict__.items():
                 if key == ky:
-                    s[key] = valu
+                    s[key] = values
         return s
