@@ -12,13 +12,17 @@ def pascal_triangle(n):
     k = []
     if n <= 0:
         return k
-    for i in range(n-1):
+    for i in range(n):
         s = []
         if i == 0:
             s.append(1)
             k.append(s)
             continue
         if i == 1:
+            s.append(1)
+            s.append(2)
+            continue
+        if i == 2:
             s.append(1)
             s.append(2)
             s.append(1)
