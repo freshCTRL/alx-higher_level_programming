@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+"""
+THis module contains a function function that returns
+an object(Python data structure) represented by a JSON string:
+    """
 def from_json_string(my_str):
-    """ a function that returns an object (Python data structure)
-    represented by a JSON string:
+    """ a function that returns an object(Python
+    data structure) represented by a JSON string:
     """
     import json
-    with open("mydata.json", "w", encoding="utf-8") as f:
-        f.write(my_str)
-    with open("mydata.json", "r", encoding="utf-8") as myFile:
-        return json.loads(myFile.read())
+    return json.loads(my_str)
