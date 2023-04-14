@@ -20,7 +20,8 @@ def pascal_triangle(n):
             continue
         if i == 1:
             s.append(1)
-            s.append(2)
+            s.append(1)
+            k.append(s)
             continue
         f = u = 1
         a = 0
