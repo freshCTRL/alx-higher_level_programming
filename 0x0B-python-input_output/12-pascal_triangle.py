@@ -33,7 +33,7 @@ def pascal_triangle(n):
         a = 0
         s.append(1)
         j = k[-1][:]
-        while f < i + 1:
+        while f < i:
             s.append(sum(j[a:u + 1]))
             a += 1
             u += 1
