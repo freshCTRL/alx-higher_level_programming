@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-THis module contains a a function that reads
+THis module contains a function that reads
 a text file (UTF8) and prints it
 to stdout:
 """
