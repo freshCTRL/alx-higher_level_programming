@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
-THis module contains a a function that reads
-a text file (UTF8) and prints it
-to stdout:
+THis module contains a file that function
+that returns the list of available
+attributes and methods of an object:
 """
 
 
-def read_file(filename=""):
-    """a function that reads a text file (UTF8)
-    and prints it to stdout:
+def lookup(obj):
+    """function that returns the list of available
+    attributes and methods of an object:
     """
-    with open(filename, mode="r", encoding="utf-8") as myFile:
-        print(myFile.read())
+    return dir(obj)
