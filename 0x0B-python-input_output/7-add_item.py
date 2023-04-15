@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+This module gets and update the list of command that are pass or
+have been passed to command line argument, stores them inside a json file,
+load them each time it needs to be updated
+"""
+
 from sys import argv
 import json
 import os
@@ -23,7 +29,9 @@ def save_to_json_file(my_obj, filename):
 
 
 def main():
-
+    """a script that adds all arguments to a Python list, and
+    then save them to a file:
+    """
     count = len(argv)
 
     i = 1
