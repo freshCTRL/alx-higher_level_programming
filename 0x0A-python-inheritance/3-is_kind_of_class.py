@@ -13,6 +13,6 @@ def is_kind_of_class(obj, a_class):
     if isinstance(obj, a_class):
         return True
     for i in a_class.__subclasses__():
-        if isinstance(obj, i) :
+        if isinstance(obj, i):
             return True
     return False

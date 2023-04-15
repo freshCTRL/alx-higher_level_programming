@@ -1,0 +1,32 @@
+"""
+THis file is a doctest for task 7
+
+>>> example = __import__('7-base_geometry').BaseGeometry
+
+>>> ab = example()
+
+>>> ab.integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
+
+>>> ab.integer_validator("age", 0)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+
+>>> ab.integer_validator("name", "John")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> ab.integer_validator("my_int", "12")
+Traceback (most recent call last):
+    ...
+TypeError: my_int must be an integer
+
+>>> ab.integer_validator("my_int", 12)
+
+>>> ab.integer_validator("width", 89)
+
+"""

@@ -50,4 +50,5 @@ class Rectangle(BaseGeometry):
         """the magic that returns the below whenever
         str or print of the class is called
         """
-        return "[Rectangle]" + " " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle]" + " " + str(self.__width) + "/"\
+            + str(self.__height)
