@@ -4,27 +4,39 @@ strings and integers when used with the function
 
 >>> example = __import__('1-my_list').MyList
 
->>> hu = example()
+>>> du = example()
 
->>> hu.append(None)
+>>> du.print_sorted()
+[]
 
->>> hu.append(False)
+>>> print(du)
+[]
 
->>> print(hu)
-[None, False]
 
->>> hu.print_sorted()
+>>> au = example()
+
+>>> au.append(None)
+
+>>> au.append(False)
+
+>>> au.print_sorted()
 Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'bool' and 'NoneType'
 
->>> du = example()
+>>> print(au)
+[None, False]
 
->>> du.append(5)
+>>> su = example()
 
->>> du.append(4)
+>>> su.append(5)
 
->>> print(du)
+>>> su.append(4)
+
+>>> su.print_sorted()
+[4, 5]
+
+>>> print(su)
 [5, 4]
 
 """
