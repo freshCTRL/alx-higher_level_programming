@@ -43,7 +43,8 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        return "[Rectangle]" + " " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle]" + " " + str(self.__width) + "/"\
+            + str(self.__height)
 
 
 class Square(Rectangle):
