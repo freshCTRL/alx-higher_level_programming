@@ -51,13 +51,14 @@ class Square(Rectangle):
     """a class Square that inherits
     from a subclass rectangle
     """
-    def __init__(self, size, width=1, height=1):
+    def __init__(self, size):
+        super().integer_validator("size", size)
+        self.__size = size
+        width = height = size
         super().__init__(width, height)
         """Initialises the Square
         class
         """
-        super().integer_validator("size", size)
-        self.__size = size
 
     def area(self):
         """the function that returns the area
