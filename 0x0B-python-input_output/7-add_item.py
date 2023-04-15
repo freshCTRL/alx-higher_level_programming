@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""
-THis function adds  all arguments to a Python list,
-and then save them to a file: save_to_json_file
-load_from_json_file saved as a JSON representation
-"""
+from sys import argv
+import json
+import os
+from pathlib import Path
 
 
 def load_from_json_file(filename):
@@ -11,31 +10,41 @@ def load_from_json_file(filename):
     a python object
     """
     import json
-    with open(filename, "r", encoding="utf-8") as f:
+    with open(filename, mode="r", encoding="utf-8") as f:
         return json.loads(f.read())
 
 
 def save_to_json_file(my_obj, filename):
-    """takes a python object
-    and convert to a json file
+    """ a function that writes an Object to a text file,
+    using a JSON representation:
     """
-    import json
     with open(filename, mode="w", encoding="utf-8") as myFile:
         myFile.write(json.dumps(my_obj))
 
 
-def sumAllArgs():
-    """a function that adds all command
-    line arguments to a list
-    """
-    import json
-    from sys import argv
-    my_list = []
+def main():
+
     count = len(argv)
+
     i = 1
+    my_list = []
     while i < count:
-        my_list.append(argv[i])
+        d = argv[i]
+        my_list.append(d)
         i += 1
 
-    save_to_json_file(my_list, "add_item.json")
-    load_from_json_file("add_item.json")
+    filename = "add_item.json"
+    path = Path(filename)
+    if not path.is_file():
+        open(filename, "w")
+
+    with open(filename, mode="r+", encoding="utf-8"):
+        if os.stat(filename).st_size != 0:
+            data = load_from_json_file(filename)
+            data += my_list
+            save_to_json_file(data, filename)
+        else:
+            save_to_json_file(my_list, filename)
+
+
+main()
