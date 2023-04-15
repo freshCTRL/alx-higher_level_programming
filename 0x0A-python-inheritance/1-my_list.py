@@ -1,38 +1,37 @@
 #!/usr/bin/python3
-"""a Mylist module"""
+"""a Mylist module which has a subclass
+Mylist and a parent class list.
+it init an empty list, has append function and the
+magic str method
+"""
 
 
 class list:
     """a class named list
+    containing an empty list
     """
-
-    my_list = []
-
     def __init__(self):
-        """Initialises the list class
+        """Initialises the
+        list class
         """
-        list.my_list = []
+        self.list = []
+
+    def append(self, value):
+        """append to
+        a list
+        """
+        self.list.append(value)
+
+    def __str__(self):
+        return str(self.list)
 
 
 class MyList(list):
-    """a Class that inherit from list
+    """a Class that inherit
+    from class list
     """
-    def __init__(self):
-        super().__init__()
-
-    def append(self, value):
-        """a function that append the value passed
-        """
-        list.my_list.append(value)
-
-    def __str__(self):
-        """always called when the str method is
-        called or the print function
-        """
-        return str(list.my_list)
-
-    def print_sorted():
+    def print_sorted(self):
         """a function that prints the list
         but sorted (ascending sort)
         """
-        print(sorted(list.my_list))
+        print(sorted(self.list))
