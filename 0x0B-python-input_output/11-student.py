@@ -35,5 +35,6 @@ class Student:
         """reload the caller(the class itself ar it instance)
         with a dict(named json in this instance)
         """
-        for key, values in json:
-            self.key = values
+        self.first_name = json["first_name"]
+        self.last_name = json["last_name"]
+        self.age = json["age"]
