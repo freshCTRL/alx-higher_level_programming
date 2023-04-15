@@ -27,7 +27,7 @@ class BaseGeometry:
             raise ValueError(str(name) + " " + "must be greater than 0")
 
 
-class Rectangle:
+class Rectangle(BaseGeometry):
     """
     a Rectangle class: a subclass to BaseGeometry class
     """
