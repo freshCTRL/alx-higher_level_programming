@@ -10,19 +10,11 @@ class BaseGeometry:
     """a BaseGeometry
     class
     """
-    pass
-
-
-class Rectangle(BaseGeometry):
-    """
-    a Rectangle class: a subclass to BaseGeometry class
-    """
-    def __init__(self, width, height):
-        super().__init__()
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+    def area(self):
+        """
+        checks if the argument needed to determine the area is passed
+        """
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """validates the name
@@ -32,6 +24,17 @@ class Rectangle(BaseGeometry):
             raise TypeError(str(name) + " " + "must be an integer")
         if value <= 0:
             raise ValueError(str(name) + " " + "must be greater than 0")
+
+
+class Rectangle(BaseGeometry):
+    """
+    a Rectangle class: a subclass to BaseGeometry class
+    """
+    def __init__(self, width, height):
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
     def area(self):
         """
@@ -49,7 +52,9 @@ class Square(Rectangle):
     from a subclass rectangle
     """
     def __init__(self, size):
-        super().__init__(size, size)
+        super().integer_validator("size", size)
+        width = height = size
+        super().__init__(width, height)
         """Initialises the Square
         class
         """
