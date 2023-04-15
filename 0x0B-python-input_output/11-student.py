@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""a module containing a student class and a function
+"""
+a module containing a student class and a function
 that returns the dict of the instance to
 the class or the class
 """
