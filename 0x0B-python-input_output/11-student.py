@@ -32,7 +32,7 @@ class Student:
             return s
         return self.__dict__
 
-    def reload_from_json(self, json):
+    def reload_from_json(self, json={}):
         """reload the caller(the class itself ar it instance)
         with a dict(named json in this instance)
         """
