@@ -1,77 +1,70 @@
 #!/usr/bin/python3
-"""a BaseGeometry module
+"""
+a BaseGeometry module
+containing a method that determines
+the value of area of the geometry
 """
 
 
 class BaseGeometry:
-    """a BaseGeometry class
+    """a BaseGeometry
+    class
     """
-
-    def __init__(self):
-        """Initialises the Base Class
-        """
-        self.value = None
-        self.name = None
-
     def area(self):
-        """Raises: Exception("area() is not implemented")
+        """
+        checks if the argument needed to determine the area is passed
         """
         raise Exception("area() is not implemented")
 
-    def integer_validator(self, name, value):
-        """validates the value passed during init
+    def integer_validator(self, name="", value=()):
+        """validates the name
+        and value passed
         """
         if type(value) != int:
-            raise TypeError("<name> must be an integer")
+            raise TypeError(str(name) + " " + "must be an integer")
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
-        self.name = name
-        self.value = value
-        return self.value
+            raise ValueError(str(name) + " " + "must be greater than 0")
 
 
 class Rectangle(BaseGeometry):
-    """a Rectangle class that inherits
-    from the BaseGeometry class
+    """
+    a Rectangle class: a subclass to BaseGeometry class
     """
     def __init__(self, width, height):
-        """Initialises the Rectangle class
-        """
-        super().__init__()
-        self.__width = BaseGeometry.integer_validator(self, self.name, width)
-        self.__height = BaseGeometry.integer_validator(self, self.name, height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
     def area(self):
-        """Calculate the area of the rectangle
+        """
+        checks if the argument needed to determine the area is passed
         """
         return self.__width * self.__height
 
     def __str__(self):
-        """always print when the print function or str method is called
-        """
-        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle]" + " " + str(self.__width) + "/" + str(self.__height)
 
 
 class Square(Rectangle):
-    """a Square class
+    """a class Square that inherits
+    from a subclass rectangle
     """
-    width = 0
-    height = 0
-
-    def __init__(self, size):
-        """Initialises the base class of Square.
-        set the size of the square
-        """
-        width = height = size
+    def __init__(self, size, width=1, height=1):
         super().__init__(width, height)
-        self.__size = BaseGeometry.integer_validator(self, self.name, size)
+        """Initialises the Square
+        class
+        """
+        super().integer_validator("size", size)
+        self.__size = size
 
     def area(self):
-        """Calculate the area of the Square
-        """
+        """the function that returns the area
+        of a square"""
         return self.__size ** 2
 
     def __str__(self):
-        """always print when the print function or str method is called
+        """the magic that returns the below whenever
+        str or print of the class is called
         """
-        return "[Square] " + str(self.__size) + "/" + str(self.__size)
+        return "[Square]" + " " + str(self.__size) + "/" + str(self.__size)
