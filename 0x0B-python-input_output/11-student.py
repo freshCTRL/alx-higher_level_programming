@@ -32,10 +32,15 @@ class Student:
             return s
         return self.__dict__
 
-    def reload_from_json(self, json={}):
+    def reload_from_json(self, json):
         """reload the caller(the class itself ar it instance)
         with a dict(named json in this instance)
         """
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        if not bool(json):
+            self.first_name = json["first_name"]
+            self.last_name = json["last_name"]
+            self.age = json["age"]
+        else:
+            self.first_name = self.__dict__["first_name"]
+            self.last_name = self.__dict__["last_name"]
+            self.age = age = self.__dict__["age"]
