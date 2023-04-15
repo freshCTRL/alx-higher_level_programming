@@ -36,7 +36,7 @@ class Student:
         """reload the caller(the class itself ar it instance)
         with a dict(named json in this instance)
         """
-        if not bool(json):
+        if bool(json):
             self.first_name = json["first_name"]
             self.last_name = json["last_name"]
             self.age = json["age"]
