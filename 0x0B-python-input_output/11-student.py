@@ -35,9 +35,5 @@ class Student:
         """reload the caller(the class itself ar it instance)
         with a dict(named json in this instance)
         """
-        s = {}
-        for ky, valu in json.items():
-            for key, values in self.__dict__.items():
-                if key == ky:
-                    s[key] = values
-        return s
+        for key, values in json:
+            self.key = values
