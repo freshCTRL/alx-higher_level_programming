@@ -10,36 +10,85 @@ Traceback (most recent call last):
     ...
 ValueError: distance must be greater than 0
 
->>> ab.integer_validator("age", 0)
+>>> bb = example()
+
+>>> bb.integer_validator("age", 0)
 Traceback (most recent call last):
     ...
 ValueError: age must be greater than 0
 
->>> ab.integer_validator("name", "John")
+>>> cb = example()
+
+>>> cb.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
 
->>> ab.integer_validator("my_int", "12")
+>>> db = example()
+
+>>> db.integer_validator("my_int", "12")
 Traceback (most recent call last):
     ...
 TypeError: my_int must be an integer
 
->>> ab.integer_validator("my_int", 12)
+>>> eb = example()
 
->>> ab.integer_validator("my_int")
+>>> eb.integer_validator("my_int", 12)
+
+>>> fb = example()
+
+>>> fb.integer_validator("my_int")
 Traceback (most recent call last):
     ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> ab.integer_validator()
+>>> gb = example()
+
+>>> gb.integer_validator()
 Traceback (most recent call last):
     ...
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> ab.area()
+>>> hb = example()
+
+>>> hb.area()
 Traceback (most recent call last):
     ...
 Exception: area() is not implemented
+
+>>> ggg = example()
+
+>>> ggg.integer_validator("age", -4)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+
+>>> hhh = example()
+
+>>> hhh.integer_validator("age", [3])
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> jjj = example()
+
+>>> jjj.integer_validator("age", True)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> ddd = example()
+
+>>> ddd.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> rrr = example()
+
+>>> rrr.integer_validator("age", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
 
 """
