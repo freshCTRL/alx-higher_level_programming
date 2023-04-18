@@ -32,6 +32,8 @@ class Rectangle(Base):
         Initialises the Rectangle class
         """
         super().__init__()
+        if id is not None:
+            self.id = id
         self.__width = width
         self.__height = height
         self.__x = x
