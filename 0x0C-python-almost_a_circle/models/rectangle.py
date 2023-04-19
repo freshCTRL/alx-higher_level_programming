@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-from base import Base
 """
 This module
 contains the
 Base class
+"""
+
+from base import Base
+"""
+imports from parent class Base
 """
 
 
