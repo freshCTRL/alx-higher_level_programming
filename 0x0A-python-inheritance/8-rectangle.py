@@ -7,6 +7,7 @@ the value of area of the geometry
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """
     a Rectangle class: a subclass to BaseGeometry class
