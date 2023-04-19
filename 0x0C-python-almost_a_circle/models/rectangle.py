@@ -5,7 +5,7 @@ contains the
 Base class
 """
 
-from base import Base
+from models.base import Base
 """
 imports from parent class Base
 """
