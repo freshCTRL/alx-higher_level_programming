@@ -133,6 +133,6 @@ class Rectangle(Base):
         """a function that gets called when
         the str builtin or print is called
         """
-        return "[Rectangle]" + " " + "(" + str(self.id) + ")" + " "\
-            + str(self.__x) + "/" + str(self.__y) + " " + "-" + " "\
-            + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle]" + " " + "(" + str(self.id) + ")"\
+            + " " + str(self.__x) + "/" + str(self.__y) + " " + "-"\
+            + " " + str(self.__width) + "/" + str(self.__height)
