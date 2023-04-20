@@ -52,7 +52,7 @@ class Square(Rectangle):
         size = value
         width = height = size
         super().__init__(width, height, x=0, y=0, id=None)
-    
+
     def update(self, *args, **kwargs):
         """This function update the class Square by assigning
         to attributes
