@@ -15,23 +15,17 @@ class Square(Rectangle):
     """
     a Square class
     """
-    __size = 0
-
     def __init__(self, size, x=0, y=0, id=None):
         """
         Initialises the square class
         """
-        if not size:
-            size = Square.__size
         if type(size) != int:
             raise TypeError("width must be an integer")
         if size <= 0:
             raise ValueError("width must be > 0")
         self.__size = size
-        width = height = self.__size
-        super().__init__(width, height, x, y, id)
-        if id is not None:
-            self.id = id
+        width = height = self.size
+        super().__init__(width, height, x, y)
 
     def __str__(self):
         """
