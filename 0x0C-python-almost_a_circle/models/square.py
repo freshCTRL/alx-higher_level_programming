@@ -93,3 +93,6 @@ class Square(Rectangle):
                     self.x = kwargs[key]
                 if key == "y":
                     self.y = kwargs[key]
+
+    def to_dictionary(self):
+        return self.__dict__
