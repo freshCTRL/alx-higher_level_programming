@@ -54,6 +54,9 @@ class Square(Rectangle):
         super().__init__(width, height, x=0, y=0, id=None)
     
     def update(self, *args, **kwargs):
+        """This function update the class Square by assigning
+        to attributes
+        """
         if len(args) != 0:
             if type(args[0]) != dict:
                 if len(args) == 1:
