@@ -32,7 +32,7 @@ class Square(Rectangle):
         gets called when the str or print method is called
         """
         return "[Square]" + " " + "(" + str(self.id) + ")" + " " + str(self.x)\
-            + "/" + str(self.y) + " " + "-" + " " + str(self.__size)
+            + "/" + str(self.y) + " " + "-" + " " + str(self.width)
 
     @property
     def size(self):
