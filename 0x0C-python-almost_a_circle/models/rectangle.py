@@ -138,3 +138,18 @@ class Rectangle(Base):
         return "[Rectangle]" + " " + "(" + str(self.id) + ")"\
             + " " + str(self.__x) + "/" + str(self.__y) + " " + "-"\
             + " " + str(self.__width) + "/" + str(self.__height)
+
+    def update(self, *args):
+        """a function that Update the class Rectangle
+        by assigning an argument to each attribute
+        """
+        if args[0] is not None:
+            self.id = args[0]
+        if args[1] is not None:
+            self.__width = args[1]
+        if args[2] is not None:
+            self.__height = args[2]
+        if args[3] is not None:
+            self.__x = args[3]
+        if args[4] is not None:
+            self.__y = args[4]
