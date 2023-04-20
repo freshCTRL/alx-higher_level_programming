@@ -19,6 +19,10 @@ class Square(Rectangle):
         """
         Initialises the square class
         """
+        if type(size) != int:
+            raise TypeError("width must be an integer")
+        if size <= 0:
+            raise ValueError("width must be > 0")
         width = height = size
         super().__init__(width, height, x, y, id)
         if id is not None:
