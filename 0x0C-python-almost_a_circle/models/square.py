@@ -30,3 +30,21 @@ class Square(Rectangle):
         """
         return "[Square]" + " " + "(" + str(self.id) + ")" + " " + str(self.x)\
             + "/" + str(self.y) + " " + "-" + " " + str(self.width)
+
+    @property
+    def size(self):
+        """
+        gets size
+        """
+        return self.size
+
+    @size.setter
+    def size(self, value):
+        """
+        sets size
+        """
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.size = value
