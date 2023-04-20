@@ -122,6 +122,9 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """a function that prints in stdout the Rectangle
+        instance with the character #
+        """
         for i in range(self.height):
             if i != self.__height:
                 print("{}".format(self.__width * '#'))
