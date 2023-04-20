@@ -15,10 +15,14 @@ class Square(Rectangle):
     """
     a Square class
     """
+    __size = 0
+    
     def __init__(self, size, x=0, y=0, id=None):
         """
         Initialises the square class
         """
+        if not size:
+            size = Square.__size
         if type(size) != int:
             raise TypeError("width must be an integer")
         if size <= 0:
