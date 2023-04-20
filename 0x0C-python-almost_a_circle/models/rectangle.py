@@ -123,11 +123,13 @@ class Rectangle(Base):
 
     def display(self):
         """that prints in stdout the Rectangle instance
-        with the character #
+        with the character # and position it base on x and y
         """
+        for i in range(self.__y):
+            print()
         for i in range(self.height):
             if i != self.__height:
-                print("{}".format(self.__width * '#'))
+                print("{}{}".format(self.__x * " ", self.__width * '#'))
 
     def __str__(self):
         """a function that gets called when
