@@ -190,4 +190,7 @@ class Rectangle(Base):
                     self.__y = kwargs[key]
     
     def to_dictionary(self):
+        """a function that returns a dict representation
+        of a class, or it's instance when called
+        """
         return self.__dict__
