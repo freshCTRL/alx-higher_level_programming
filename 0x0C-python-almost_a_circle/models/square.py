@@ -52,3 +52,41 @@ class Square(Rectangle):
         size = value
         width = height = size
         super().__init__(width, height, x=0, y=0, id=None)
+    
+    def update(self, *args, **kwargs):
+        if len(args) != 0:
+            if type(args[0]) != dict:
+                if len(args) == 1:
+                    self.id = args[0]
+                if len(args) == 2:
+                    self.id = args[0]
+                    self.width = self.height = args[1]
+                if len(args) == 3:
+                    self.id = args[0]
+                    self.width = self.height = args[1]
+                    self.x = args[2]
+                if len(args) == 4:
+                    self.id = args[0]
+                    self.width = self.height = args[1]
+                    self.x = args[2]
+                    self.y = args[3]
+            else:
+                for key in kwargs:
+                    if key == "id":
+                        self.id = kwargs[key]
+                    if key == "size":
+                        self.width = self.height = kwargs[key]
+                    if key == "x":
+                        self.x = kwargs[key]
+                    if key == "y":
+                        self.y = kwargs[key]
+        else:
+            for key in kwargs:
+                if key == "id":
+                    self.id = kwargs[key]
+                if key == "size":
+                    self.width = self.height = kwargs[key]
+                if key == "x":
+                    self.x = kwargs[key]
+                if key == "y":
+                    self.y = kwargs[key]
