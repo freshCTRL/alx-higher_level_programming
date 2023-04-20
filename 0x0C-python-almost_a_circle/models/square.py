@@ -23,7 +23,8 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if size <= 0:
             raise ValueError("width must be > 0")
-        width = height = size
+        self.__size = size
+        width = height = self.__size
         super().__init__(width, height, x, y, id)
         if id is not None:
             self.id = id
@@ -40,7 +41,7 @@ class Square(Rectangle):
         """
         gets size
         """
-        return self.size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -51,4 +52,4 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.size = value
+        self.__size = value
