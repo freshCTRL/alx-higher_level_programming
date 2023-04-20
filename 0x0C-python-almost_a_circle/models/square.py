@@ -23,9 +23,7 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if size <= 0:
             raise ValueError("width must be > 0")
-        self.__size = size
-        width = self.__size
-        height = self.__size
+        width = height = size
         super().__init__(width, height, x=0, y=0, id=None)
 
     def __str__(self):
@@ -33,14 +31,14 @@ class Square(Rectangle):
         gets called when the str or print method is called
         """
         return "[Square]" + " " + "(" + str(self.id) + ")" + " " + str(self.x)\
-            + "/" + str(self.y) + " " + "-" + " " + str(self.__size)
+            + "/" + str(self.y) + " " + "-" + " " + str(self.width)
 
     @property
     def size(self):
         """
         retrieves the size
         """
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -51,4 +49,6 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__size = value
+        size = value
+        width = height = size
+        super().__init__(width, height, x=0, y=0, id=None)
