@@ -33,7 +33,7 @@ class Square(Rectangle):
         gets called when the str or print method is called
         """
         return "[Square]" + " " + "(" + str(self.id) + ")" + " " + str(self.x)\
-            + "/" + str(self.y) + " " + "-" + " " + str(self.width)
+            + "/" + str(self.y) + " " + "-" + " " + str(self.__size)
 
     @property
     def size(self):
@@ -52,6 +52,3 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__size = value
-        width = self.__size
-        height = self.__size
-        super().__init__(width, height, x=0, y=0, id=None)
