@@ -144,7 +144,7 @@ class Rectangle(Base):
         by assigning an argument to each attribute
         """
         if len(args) != 0:
-            if tyep(args[0]) == tuple:
+            if type(args[0]) != dict:
                 if len(args) == 1:
                     self.id = args[0]
                 if len(args) == 2:
