@@ -25,7 +25,7 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.__size = size
         width = height = self.size
-        super().__init__(width, height, x, y)
+        super().__init__(width, height, x=0, y=0)
 
     def __str__(self):
         """
@@ -51,3 +51,5 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__size = value
+        width = height = self.__size
+        super().__init__(width, height, x=0, y=0)
