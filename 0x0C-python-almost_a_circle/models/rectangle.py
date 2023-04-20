@@ -143,13 +143,24 @@ class Rectangle(Base):
         """a function that Update the class Rectangle
         by assigning an argument to each attribute
         """
-        if args[0] is not None:
-            self.id = args[0]
-        if args[1] is not None:
-            self.__width = args[1]
-        if args[2] is not None:
-            self.__height = args[2]
-        if args[3] is not None:
-            self.__x = args[3]
-        if args[4] is not None:
-            self.__y = args[4]
+        if len(args) != 0:
+            if tyep(args[0]) == tuple:
+                if len(args) == 1:
+                    self.id = args[0]
+                if len(args) == 2:
+                    self.id = args[0]
+                    self.__width = args[1]
+                if len(args) == 3:
+                    self.id = args[0]
+                    self.__width = args[1]
+                    self.__height = args[2]
+                if len(args) == 4:
+                    self.id = args[0]
+                    self.__width = args[1]
+                    self.__height = args[2]
+                    self.__x = args[3]
+                if len(args) == 5:
+                    self.id = args[0]
+                    self.__width = args[1]
+                    self.__height = args[2]
+                    self.__y = args[4]
