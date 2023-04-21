@@ -165,33 +165,17 @@ class Rectangle(Base):
                     self.__height = args[2]
                     self.__x = args[3]
                     self.__y = args[4]
-            else:
-                for key, value in args[0].items():
-                    if key == "id":
-                        self.id = value
-                    if key == "width":
-                        self.__width = value
-                    if key == "height":
-                        self.__height = value
-                    if key == "x":
-                        self.__x = value
-                    if key == "y":
-                        self.__y = value
         else:
-            for key in kwargs:
-                if key == "id":
-                    self.id = kwargs[key]
-                if key == "width":
-                    self.__width = kwargs[key]
-                if key == "height":
-                    self.__height = kwargs[key]
-                if key == "x":
-                    self.__x = kwargs[key]
-                if key == "y":
-                    self.__y = kwargs[key]
+            for key, value in kwargs.items():
+                setattr(self, key, value)
     
     def to_dictionary(self):
         """a function that returns a dict representation
         of a class, or it's instance when called
         """
-        return self.__dict__
+        keys = ["id", "width", "height", "x", "y"]
+        d = {}
+        for key in keys:
+            d[key] = getattr(self, key)
+
+        return d
