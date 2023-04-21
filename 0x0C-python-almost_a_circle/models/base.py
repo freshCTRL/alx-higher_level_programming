@@ -42,10 +42,12 @@ class Base:
         a_string = cls.to_json_string(list_objs)
         b_string = json.loads(a_string)
         if not b_string:
-            with open(__class__.__name__.json, mode="w", encoding="utf-8") as file:
+            with open(__class__.__name__.json, mode="w",
+                      encoding="utf-8") as file:
                 file.write(a_string)
         else:
-            with open(__class__.__name__.json, mode="w", encoding="utf-8") as file:
+            with open(__class__.__name__.json, mode="w",
+                      encoding="utf-8") as file:
                 file.write(a_string)
 
     @staticmethod
