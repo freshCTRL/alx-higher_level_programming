@@ -5,6 +5,11 @@ contains the
 Base class
 """
 
+import json
+"""
+imports json
+"""
+
 
 class Base:
     """
@@ -38,7 +43,6 @@ class Base:
         """a function that writes the JSON string representation
         of list_objs to a file:
         """
-        import json
         a_string = cls.to_json_string(list_objs)
         b_string = json.loads(a_string)
         if not b_string:
@@ -57,7 +61,6 @@ class Base:
         """
         if json_string is None or len(json_string) == 0:
             return []
-        import json
         return json.loads(json_string)
 
     @classmethod

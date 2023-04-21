@@ -59,37 +59,33 @@ class Square(Rectangle):
         """
         if len(args) != 0:
             if type(args[0]) != dict:
-                if len(args) == 1:
-                    self.id = args[0]
-                if len(args) == 2:
-                    self.id = args[0]
-                    self.width = self.height = args[1]
-                if len(args) == 3:
-                    self.id = args[0]
-                    self.width = self.height = args[1]
-                    self.x = args[2]
-                if len(args) == 4:
-                    self.id = args[0]
-                    self.width = self.height = args[1]
-                    self.x = args[2]
-                    self.y = args[3]
+                try:
+                    self.width = args[0]
+                    self.height = args[0]
+                    self.x = args[1]
+                    self.y = args[2]
+                    self.id = args[3]
+                except IndexError:
+                    return
+        else:
+            if type(kwargs) == dict:
+                for key, value in kwargs.items():
+                    if key == "size":
+                        self.width = kwargs[key]
+                        self.width = kwargs[key]
+                    if key == "x":
+                        self.x = kwargs[key]
+                    if key == "y":
+                        self.y = kwargs[key]
+                    if key == "id":
+                        self.id = kwargs[key]
             else:
                 for key in kwargs:
                     if key == "id":
                         self.id = kwargs[key]
                     if key == "size":
-                        self.width = self.height = kwargs[key]
+                        self.id = kwargs[key]
                     if key == "x":
                         self.x = kwargs[key]
                     if key == "y":
                         self.y = kwargs[key]
-        else:
-            for key in kwargs:
-                if key == "id":
-                    self.id = kwargs[key]
-                if key == "size":
-                    self.width = self.height = kwargs[key]
-                if key == "x":
-                    self.x = kwargs[key]
-                if key == "y":
-                    self.y = kwargs[key]
