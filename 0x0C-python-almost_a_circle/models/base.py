@@ -28,9 +28,11 @@ class Base:
         representation of list_dictionaries:
         """
         import json
-        if len(list_dictionaries) == 0:
-            return []
-        return json.dumps(list_dictionaries)
+        if len(list_dictionaries) == 0 or list_dictionaries is None:
+            return json.dumps([])
+        else:
+            if type(list_dictionaries) == list:
+                return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
