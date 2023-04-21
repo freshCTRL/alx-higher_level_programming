@@ -68,6 +68,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+    """
+    a function that returns a list of instances:
+    """
         if not __class__.__name__.is_file():
             return []
         else:
