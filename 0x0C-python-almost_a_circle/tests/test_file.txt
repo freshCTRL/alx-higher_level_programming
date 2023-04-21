@@ -1,0 +1,36 @@
+"""
+This module imports some functions and print some example
+
+>>> from main import add, search_replace, uniq_add, sub, mult, div, number_keys, islower, uppercase, pow
+
+>>> print(add(7, 8))
+15
+
+>>> print(sub(7, 8))
+-1
+
+>>> print(mult(2,3))
+6
+
+>>> print(div(9, 3))
+3
+
+>>> print(pow(8, 2))
+64
+
+>>> islower('H')
+False
+
+>>> uppercase("house")
+HOUSE
+
+>>> print(search_replace([7, 8, 9], 7, 8))
+[8, 8, 9]
+
+>>> print(uniq_add([9, 7, 3, 6, 3]))
+25
+
+>>> print(number_keys({"aliu": 8, "kabir": 9, "daniel": 7}))
+3
+
+"""
