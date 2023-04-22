@@ -43,16 +43,13 @@ class Base:
         """a function that writes the JSON string representation
         of list_objs to a file:
         """
-        a_string = cls.to_json_string(list_objs)
-        b_string = json.loads(a_string)
-        if not b_string:
-            with open(__class__.__name__.json, mode="w",
-                      encoding="utf-8") as file:
-                file.write(a_string)
+        if list_objs is not None:
+            new_list = [obj.to_dictionary() for obj in list_objs]
+            a_string = cls.to_json_string(new_list)
         else:
-            with open(__class__.__name__.json, mode="w",
-                      encoding="utf-8") as file:
-                file.write(a_string)
+            a_string = cls.to_json_string([])
+        with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") as file:
+            file.write(a_string)
 
     @staticmethod
     def from_json_string(json_string):
@@ -69,15 +66,21 @@ class Base:
         all attributes already set:
         """
         dum = cls(width=1, height=1, x=0, y=0, id=None)
-        return dum.update(**dictionary)
+        dum.update(**dictionary)
+        return dum
 
     @classmethod
     def load_from_file(cls):
         """
         a function that returns a list of instances:
         """
-        if not __class__.__name__.is_file():
+        import os
+        filename = f"{cls.__name__}.json"
+        if not os.path.isfile(filename):
             return []
         else:
-            new_dict = cls.from_json_string(__class__.__name__.json)
-            return cls.create(**new_dict)
+            with open(filename, mode="r", encoding="utf-8") as f:
+                content = f.read()
+            ls = cls.from_json_string(content)
+
+            return [cls.create(**item) for item in ls]
