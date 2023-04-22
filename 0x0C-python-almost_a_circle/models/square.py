@@ -24,7 +24,7 @@ class Square(Rectangle):
         if size <= 0:
             raise ValueError("width must be > 0")
         width = height = size
-        super().__init__(width, height, x=0, y=0, id=None)
+        super().__init__(width, height, x, y, id)
 
     def __str__(self):
         """
@@ -49,43 +49,33 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        size = value
-        width = height = size
-        super().__init__(width, height, x=0, y=0, id=None)
+        setattr(self, "width", value)
+        setattr(self, "height", value)
 
     def update(self, *args, **kwargs):
         """This function update the class Square by assigning
         to attributes
         """
         if len(args) != 0:
-            if type(args[0]) != dict:
-                try:
-                    self.width = args[0]
-                    self.height = args[0]
-                    self.x = args[1]
-                    self.y = args[2]
-                    self.id = args[3]
-                except IndexError:
-                    return
+            try:
+                self.width = args[0]
+                self.height = args[0]
+                self.x = args[1]
+                self.y = args[2]
+                self.id = args[3]
+            except IndexError:
+                return
         else:
-            if type(kwargs) == dict:
-                for key, value in kwargs.items():
-                    if key == "size":
-                        self.width = kwargs[key]
-                        self.width = kwargs[key]
-                    if key == "x":
-                        self.x = kwargs[key]
-                    if key == "y":
-                        self.y = kwargs[key]
-                    if key == "id":
-                        self.id = kwargs[key]
-            else:
-                for key in kwargs:
-                    if key == "id":
-                        self.id = kwargs[key]
-                    if key == "size":
-                        self.id = kwargs[key]
-                    if key == "x":
-                        self.x = kwargs[key]
-                    if key == "y":
-                        self.y = kwargs[key]
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """a function that returns a dict representation
+        of a class, or it's instance when called
+        """
+        keys = ["id", "size", "x", "y"]
+        d = {}
+        for key in keys:
+            d[key] = getattr(self, key)
+
+        return d
