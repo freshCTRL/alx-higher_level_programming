@@ -65,8 +65,12 @@ class Base:
         """a function  that returns an instance with
         all attributes already set:
         """
-        dum = cls(width=1, height=1, x=0, y=0, id=None)
-        dum.update(**dictionary)
+        if f"{cls.__name__}" != "Square":
+            dum = cls(width=1, height=1, x=0, y=0, id=None)
+            dum.update(**dictionary)
+        else:
+            dum = cls(size=1, x=0, y=0, id=None)
+            dum.update(**dictionary)
         return dum
 
     @classmethod
