@@ -58,11 +58,10 @@ class Square(Rectangle):
         """
         if len(args) != 0:
             try:
-                self.width = args[0]
-                self.height = args[0]
-                self.x = args[1]
-                self.y = args[2]
-                self.id = args[3]
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
             except IndexError:
                 return
         else:
