@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 THis module contain possible test cases for the
 class Base, Square, and Rectangle
