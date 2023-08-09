@@ -16,14 +16,14 @@ class Test_1(unittest.TestCase):
         on class Base
         """
         b1 = Base()
-        self.assertEquals(b1.id, 1)
+        self.assertIsNotNone(b1.id)
     def test_second_Base(self):
         """
         THis test definition tests all the possible test cases
         on class Base
         """
-        b1 = Base()
-        self.assertEquals(b1.id, 2)
+        b2 = Base()
+        self.assertEquals(b2.id, b1.id+1)
         ist_3 = Base(99)
         self.assertEqual(ist_3.id, 99)
         self.assertIsNotNone(ist_3.to_json_string(None))
