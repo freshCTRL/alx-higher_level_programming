@@ -14,10 +14,10 @@ class Test_1(unittest.TestCase):
     possible test cases
     """
     def test_Square(self):
-    """
-    THis test definition tests all the possible test cases
-    on class Square
-    """
+        """
+        THis test definition tests all the possible test cases
+        on class Square
+        """
         self.assertIsNotNone(Square(1))
         self.assertIsNotNone(Square(1, 2))
         self.assertIsNotNone(Square(1, 2, 3))
