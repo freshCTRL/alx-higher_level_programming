@@ -67,8 +67,10 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(ist_1r.update(**valu))
         self.assertIsNotNone(Rectangle.create(**{"id": 89}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1}))
-        self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2}))
-        self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3}))
+        valu = {"id": 89, "width": 1, "height": 2}
+        self.assertIsNotNone(Rectangle.create(**valu))
+        valu = {"id": 89, "width": 1, "height": 2, "x": 3}
+        self.assertIsNotNone(Rectangle.create(**valu))
         valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
         self.assertIsNotNone(Rectangle.create(**valu))
         self.assertIsNone(Rectangle.save_to_file(None))
@@ -99,11 +101,13 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(Square(1, 2, 3).update(89, 1, 2, 3))
         self.assertIsNone(Square(1, 2, 3).update(**{"id": 89}))
         self.assertIsNone(Square(1, 2, 3).update(**{"id": 89, "size": 1}))
-        self.assertIsNone(Square(1, 2, 3).update(**{'id': 89, 'size': 1, 'x': 2, 'y': 3}))
+        valu = {'id': 89, 'size': 1, 'x': 2, 'y': 3}
+        self.assertIsNone(Square(1, 2, 3).update(**valu))
         self.assertIsNotNone(Square.create(**{'id': 89}))
         self.assertIsNotNone(Square.create(**{'id': 89, 'size': 1}))
         self.assertIsNotNone(Square.create(**{'id': 89, 'size': 1, 'x': 2}))
-        self.assertIsNotNone(Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3}))
+        valu = {'id': 89, 'size': 1, 'x': 2, 'y': 3}
+        self.assertIsNotNone(Square.create(**valu))
         self.assertEqual(Square.load_from_file(), [])
         self.assertIsNone(Square.save_to_file(None))
         self.assertIsNone(Square.save_to_file([]))
