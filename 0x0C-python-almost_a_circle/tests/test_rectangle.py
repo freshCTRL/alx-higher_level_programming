@@ -1,10 +1,10 @@
-import unittest
+#!/usr/bin/python3
 """
 THis module contain possible test cases for the
 class Base, Square, and Rectangle
 """
+import unittest
 from models.rectangle import Rectangle
-"""Import Rectangle class"""
 
 
 class Test_1(unittest.TestCase): 
@@ -12,6 +12,8 @@ class Test_1(unittest.TestCase):
     this is a test class containing all
     possible test cases
     """
+    def setUp():
+        pass
     def test_Rectangle(self):
         """
         THis test definition tests all the possible test cases
@@ -58,3 +60,5 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNotNone(Rectangle.load_from_file())
+    def tearDown():
+        rm *.json
