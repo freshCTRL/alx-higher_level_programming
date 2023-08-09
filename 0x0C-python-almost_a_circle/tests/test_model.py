@@ -15,8 +15,8 @@ class Test_1(unittest.TestCase):
         THis test definition tests all the possible test cases
         on class Base
         """
-        b1 = Base()
-        self.assertIsNotNone(b1.id)
+        b1 = Base(89)
+        self.assertEqual(b1.id, 89)
 #        b2 = Base()
 #        self.assertEqual(b2.id, 2)
 #       ist_3 = Base(99)
