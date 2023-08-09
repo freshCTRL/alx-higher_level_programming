@@ -16,9 +16,9 @@ class Test_1(unittest.TestCase):
         on class Base
         """
         b1 = Base()
-        self.assertIsNotNone(b1.id)
+        self.assertEquals(b1.id, 1)
         b1 = Base()
-        self.assertIsNotNone(b1.id)
+        self.assertEquals(b1.id, 2)
         ist_3 = Base(99)
         self.assertEqual(ist_3.id, 99)
         self.assertIsNotNone(ist_3.to_json_string(None))
