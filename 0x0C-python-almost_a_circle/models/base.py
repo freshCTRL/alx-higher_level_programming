@@ -4,13 +4,10 @@ This module
 contains the
 Base class
 """
-
+import csv
 import json
 """
 importing json
-"""
-import csv
-"""
 importing csv
 """
 
@@ -107,8 +104,8 @@ class Base:
                 new_list = []
         else:
             new_list = []
-        with open(f"{cls.__name__}.csv", mode="w", encoding="utf-8", newline="") as csvfile:
-            csv_writer = csv.DictWriter(csvfile, fieldnames=head)
+        with open(f"{cls.__name__}.csv", mode="w", newline="") as f:
+            csv_writer = csv.DictWriter(f, fieldnames=head)
             if new_list:
                 csv_writer.writeheader()
                 csv_writer.writerows(new_list)
