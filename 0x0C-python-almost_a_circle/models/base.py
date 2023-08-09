@@ -7,7 +7,11 @@ Base class
 
 import json
 """
-imports json
+importing json
+"""
+import csv
+"""
+importing csv
 """
 
 
@@ -88,3 +92,45 @@ class Base:
             ls = cls.from_json_string(content)
 
             return [cls.create(**item) for item in ls]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """a function that writes object(dictionaries)
+        of list_objs to a csv file:
+        """
+        head = []
+        if list_objs is not None:
+            if len(list_objs) != 0:
+                new_list = [obj.to_dictionary() for obj in list_objs]
+                head = new_list[0].keys()
+            else:
+                new_list = []
+        else:
+            new_list = []
+        with open(f"{cls.__name__}.csv", mode="w", encoding="utf-8", newline="") as csvfile:
+            csv_writer = csv.DictWriter(csvfile, fieldnames=head)
+            if new_list:
+                csv_writer.writeheader()
+                csv_writer.writerows(new_list)
+            else:
+                csv_writer.writerows([])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """a function that pulls object(dictionaries)
+        of list_objs from a csv file:
+        """
+        import os
+        filename = f"{cls.__name__}.csv"
+        if not os.path.isfile(filename):
+            return []
+        else:
+            with open(filename, mode="r", encoding="utf-8") as csvFile:
+                csv_reader = csv.DictReader(csvFile)
+                ls = [itm for itm in csv_reader]
+
+        for obj in ls:
+            for key, values in obj.items():
+                obj[key] = int(values)
+
+        return [cls.create(**item) for item in ls]
