@@ -63,17 +63,19 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(ist_1r.update(**{"id": 89}))
         self.assertIsNone(ist_1r.update(**{"id": 89, "width": 1}))
         self.assertIsNone(ist_1r.update(**{"id": 89, "width": 1, "height": 2}))
-        self.assertIsNone(ist_1r.update(**{"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}))
+        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
+        self.assertIsNone(ist_1r.update(**valu))
         self.assertIsNotNone(Rectangle.create(**{"id": 89}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3}))
-        self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}))
+        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
+        self.assertIsNotNone(Rectangle.create(**valu))
         self.assertIsNone(Rectangle.save_to_file(None))
         self.assertIsNone(Rectangle.save_to_file([]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
-        self.assertIsNotNone(Rectangle.load_from_file()) # checkback  # checkback
+        self.assertIsNotNone(Rectangle.load_from_file())
 
     def test_Square(self):
         """
