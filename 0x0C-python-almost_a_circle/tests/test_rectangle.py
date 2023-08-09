@@ -13,7 +13,12 @@ class Test_1(unittest.TestCase):
     possible test cases
     """
     def setUp():
-        pass
+        """
+        initialises the class
+        """
+        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
+        ist_2r = Rectangle(1, 2)
+        ist_1r = Rectangle(1, 2, 3)
     def test_Rectangle(self):
         """
         THis test definition tests all the possible test cases
@@ -33,10 +38,8 @@ class Test_1(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, 0)
         self.assertRaises(ValueError, Rectangle, 1, 2, -3)
         self.assertRaises(ValueError, Rectangle, 1, 2, 3, -4)
-        ist_1r = Rectangle(1, 2)
-        self.assertIsNotNone(ist_1r.area())
-        self.assertIsNotNone(str(ist_1r))
-        ist_1r = Rectangle(1, 2, 3)
+        self.assertIsNotNone(ist_2r.area())
+        self.assertIsNotNone(str(ist_2r))
         self.assertIsNotNone(ist_1r.to_dictionary())
         self.assertIsNone(ist_1r.update())
         self.assertIsNone(ist_1r.update(78))
@@ -47,13 +50,11 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(ist_1r.update(**{"id": 89}))
         self.assertIsNone(ist_1r.update(**{"id": 89, "width": 1}))
         self.assertIsNone(ist_1r.update(**{"id": 89, "width": 1, "height": 2}))
-        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
         self.assertIsNone(ist_1r.update(**valu))
         self.assertIsNotNone(Rectangle.create(**{"id": 89}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3}))
-        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
         self.assertIsNotNone(Rectangle.create(**valu))
         self.assertIsNone(Rectangle.save_to_file(None))
         self.assertIsNone(Rectangle.save_to_file([]))
@@ -61,4 +62,7 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNotNone(Rectangle.load_from_file())
     def tearDown():
+        """
+        closes the class
+        """
         rm *.json
