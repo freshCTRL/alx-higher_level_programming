@@ -15,10 +15,10 @@ class Test_1(unittest.TestCase):
         THis test definition tests all the possible test cases
         on class Base
         """
-        ist_1 = Base()
-        self.assertIsNotNone(ist_1.id)
-        ist_2 = Base()
-        self.assertEqual(ist_2.id, ist_1.id+1)
+        b1 = Base()
+        self.assertIsNotNone(b1.id)
+        b1 = Base()
+        self.assertEqual(b1, 2)
         ist_3 = Base(99)
         self.assertEqual(ist_3.id, 99)
         self.assertIsNotNone(ist_3.to_json_string(None))
