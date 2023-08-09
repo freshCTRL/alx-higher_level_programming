@@ -10,6 +10,10 @@ importing base
 
 
 class Test_1(unittest.TestCase):
+    """
+    this is a test class containing all
+    possible test cases
+    """
     def test_Base(self):
         """
         THis test definition tests all the possible test cases
