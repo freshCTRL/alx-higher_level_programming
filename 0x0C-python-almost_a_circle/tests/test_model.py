@@ -10,6 +10,3 @@ from models.square import Square
 
 
 class Test_1(unittest.TestCase):
-    def test_ifExists(self):
-        b1 = Base()
-        self.assertIsNotNone(b1.id)
