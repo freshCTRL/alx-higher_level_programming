@@ -16,8 +16,8 @@ class Test_1(unittest.TestCase):
         on class Base
         """
         ist_1 = Base()
-        ist_2 = Base()
         self.assertIsNotNone(ist_1.id)
+        ist_2 = Base()
         self.assertEqual(ist_2.id, ist_1.id+1)
         ist_3 = Base(99)
         self.assertEqual(ist_3.id, 99)
