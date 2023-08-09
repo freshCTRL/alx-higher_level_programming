@@ -74,7 +74,7 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNotNone(Rectangle.load_from_file()) # checkback  # checkback
-    
+
     def test_Square(self):
         """
         THis test definition tests all the possible test cases
