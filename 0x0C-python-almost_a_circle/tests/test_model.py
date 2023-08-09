@@ -17,6 +17,11 @@ class Test_1(unittest.TestCase):
         """
         b1 = Base()
         self.assertEquals(b1.id, 1)
+    def test_second_Base(self):
+        """
+        THis test definition tests all the possible test cases
+        on class Base
+        """
         b1 = Base()
         self.assertEquals(b1.id, 2)
         ist_3 = Base(99)
