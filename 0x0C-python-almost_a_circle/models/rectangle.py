@@ -122,7 +122,8 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """that prints in stdout the Rectangle instance
+        """
+            that prints in stdout the Rectangle instance
             with the character # and position it base on x and y
         """
         for i in range(self.__y):
@@ -132,7 +133,8 @@ class Rectangle(Base):
                 print("{}{}".format(self.__x * " ", self.__width * '#'))
 
     def __str__(self):
-        """a function that gets called when
+        """
+            a function that gets called when
             the str builtin or print is called
         """
         return "[Rectangle]" + " " + "(" + str(self.id) + ")"\
@@ -140,7 +142,8 @@ class Rectangle(Base):
             + " " + str(self.__width) + "/" + str(self.__height)
 
     def update(self, *args, **kwargs):
-        """a function that Update the class Rectangle
+        """
+            a function that Update the class Rectangle
             by assigning an argument to each attribute
         """
         if len(args) != 0:
@@ -170,7 +173,8 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """a function that returns a dict representation
+        """
+            a function that returns a dict representation
             of a class, or it's instance when called
         """
         keys = ["id", "width", "height", "x", "y"]
