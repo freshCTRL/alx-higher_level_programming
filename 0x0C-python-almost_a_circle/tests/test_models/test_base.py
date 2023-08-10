@@ -7,7 +7,7 @@ import unittest
 from models.base import Base
 
 
-class Test_1(unittest.TestCase):
+class TestBase(unittest.TestCase):
     """
     this is a test class containing all
     possible test cases
@@ -17,13 +17,13 @@ class Test_1(unittest.TestCase):
         """
         initialising a test...
         """
-        pass
+        sys.stdout = StringIO()
 
     def tearDown(self):
         """
         closing a test...
         """
-        pass
+        sys.stdout = sys.__stdout__
 
     def test_id(self):
         b1 = Base()
