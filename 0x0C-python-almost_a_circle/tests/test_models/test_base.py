@@ -26,6 +26,9 @@ class TestBase(unittest.TestCase):
         pass
 
     def test_id(self):
+        """
+            tests if id Exists
+        """
         b1 = Base()
         b2 = Base()
         b3 = Base(id=None)
@@ -39,12 +42,18 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b5.id, 4)
 
     def test_to_json_string(self):
+        """
+            tests to_json_string method
+        """
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertEqual(Base.to_json_string([{"id": 12}]), '[{"id": 12}]')
         self.assertIsInstance(Base.to_json_string([{"id": 12}]), str)
 
     def test_from_json_string(self):
+        """
+            tests from_json_string method
+        """
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string("[]"), [])
         self.assertEqual(Base.from_json_string('[{"id": 12}]'), [{"id": 12}])
