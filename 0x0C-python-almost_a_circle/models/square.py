@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-    THis module contains the class square and it inherits functions of the class
-    rectangle, it also import a module containing the class rectangle
+    THis module contains the class square and it inherits
+    functions of the class rectangle, it also import
+    a module containing the class rectangle
 """
 
 from models.rectangle import Rectangle
