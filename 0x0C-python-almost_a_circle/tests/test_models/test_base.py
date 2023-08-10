@@ -58,3 +58,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.from_json_string("[]"), [])
         self.assertEqual(Base.from_json_string('[{"id": 12}]'), [{"id": 12}])
         self.assertIsInstance(Base.from_json_string('[{"id": 12}]'), list)
+
+if __name__ == "__main__":
+    unittest.main()
