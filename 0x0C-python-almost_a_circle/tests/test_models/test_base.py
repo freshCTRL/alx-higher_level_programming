@@ -25,25 +25,29 @@ class TestBase(unittest.TestCase):
         """
         pass
 
-    def test_id(self):
-        """
-            tests if id Exists
-        """
+    def test_instantiation_with_no_arg(self):
         b1 = Base()
-        b2 = Base()
-        b3 = Base(id=None)
-        b4 = Base(id=99)
-        b5 = Base()
 
         self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, b1.id+1)
-        self.assertEqual(b3.id, 3)
-        self.assertEqual(b4.id, 99)
-        self.assertEqual(b5.id, 4)
+
+    def test_instantiation_with_none_value(self):
+        b2 = Base(None)
+
+        self.assertEqual(b2.id, 2)
+
+    def test_instantiation_with_arg(self):
+        b3 = Base(12)
+        self.assertEqual(b3.id, 12)
+
+    def test_instantiation_set_value_based_on_previous_value(self):
+        b4 = Base()
+        b5 = Base()
+
+        self.assertEqual(b5.id, b4.id + 1)
 
     def test_to_json_string(self):
         """
-            tests to_json_string method
+        tests to_json_string method
         """
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
@@ -52,12 +56,13 @@ class TestBase(unittest.TestCase):
 
     def test_from_json_string(self):
         """
-            tests from_json_string method
+        tests from_json_string method
         """
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string("[]"), [])
         self.assertEqual(Base.from_json_string('[{"id": 12}]'), [{"id": 12}])
         self.assertIsInstance(Base.from_json_string('[{"id": 12}]'), list)
 
-if __name__ == "__main__":
+
+if name == "main":
     unittest.main()
