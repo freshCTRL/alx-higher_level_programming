@@ -7,17 +7,17 @@ module containing the class rectangle
 
 from models.rectangle import Rectangle
 """this line import the class rectangle
-from the models module
+    from the models module
 """
 
 
 class Square(Rectangle):
     """
-    a Square class
+        a Square class
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
-        Initialises the square class
+            Initialises the square class
         """
         if type(size) != int:
             raise TypeError("width must be an integer")
@@ -28,7 +28,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-        gets called when the str or print method is called
+            gets called when the str or print method is called
         """
         return "[Square]" + " " + "(" + str(self.id) + ")" + " " + str(self.x)\
             + "/" + str(self.y) + " " + "-" + " " + str(self.width)
@@ -36,14 +36,14 @@ class Square(Rectangle):
     @property
     def size(self):
         """
-        retrieves the size
+            retrieves the size
         """
         return self.width
 
     @size.setter
     def size(self, value):
         """
-        sets size
+            sets size
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -54,7 +54,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """This function update the class Square by assigning
-        to attributes
+            to attributes
         """
         if len(args) != 0:
             try:
@@ -70,7 +70,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """a function that returns a dict representation
-        of a class, or it's instance when called
+            of a class, or it's instance when called
         """
         keys = ["id", "size", "x", "y"]
         d = {}
