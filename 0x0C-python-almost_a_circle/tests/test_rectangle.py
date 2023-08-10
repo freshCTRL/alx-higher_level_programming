@@ -16,14 +16,15 @@ class Test_1(unittest.TestCase):
         """
         initialises a test...
         """
-        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
-        ist_2r = Rectangle(1, 2)
-        ist_1r = Rectangle(1, 2, 3)
+        pass
     def test_Rectangle(self):
         """
         THis test definition tests all the possible test cases
         on class Rectangle
         """
+        valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
+        ist_2r = Rectangle(1, 2)
+        ist_1r = Rectangle(1, 2, 3)
         self.assertIsNotNone(Rectangle(1, 2))
         self.assertIsNotNone(Rectangle(1, 2, 3))
         self.assertIsNotNone(Rectangle(1, 2, 3, 4))
@@ -65,4 +66,6 @@ class Test_1(unittest.TestCase):
         """
         closing a test...
         """
-        rm Rectangle.json
+        pass
+
+rm Rectangle.json
