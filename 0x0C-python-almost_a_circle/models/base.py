@@ -1,26 +1,26 @@
 #!/usr/bin/python3
 """
-This module
-contains the
-Base class
+    This module
+    contains the
+    Base class
 """
 import csv
 import json
 """
-importing json
-importing csv
+    importing json
+    importing csv
 """
 
 
 class Base:
     """
-    a base class
+        a base class
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
-        Initialises the base class
+            Initialises the base class
         """
         if id is not None:
             self.id = id
@@ -31,7 +31,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """a function that that returns the JSON string
-        representation of list_dictionaries:
+            representation of list_dictionaries:
         """
         import json
         if list_dictionaries is None:
@@ -42,7 +42,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """a function that writes the JSON string representation
-        of list_objs to a file:
+            of list_objs to a file:
         """
         if list_objs is not None:
             new_list = [obj.to_dictionary() for obj in list_objs]
@@ -55,7 +55,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """a function that returns a list of JSON
-        string representation json_string
+            string representation json_string
         """
         if json_string is None or len(json_string) == 0:
             return []
@@ -64,7 +64,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """a function  that returns an instance with
-        all attributes already set:
+            all attributes already set:
         """
         if f"{cls.__name__}" != "Square":
             dum = cls(width=1, height=1, x=0, y=0, id=None)
@@ -77,7 +77,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        a function that returns a list of instances:
+            a function that returns a list of instances:
         """
         import os
         filename = f"{cls.__name__}.json"
@@ -93,7 +93,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """a function that writes object(dictionaries)
-        of list_objs to a csv file:
+            of list_objs to a csv file:
         """
         head = []
         if list_objs is not None:
@@ -115,7 +115,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """a function that pulls object(dictionaries)
-        of list_objs from a csv file:
+            of list_objs from a csv file:
         """
         import os
         filename = f"{cls.__name__}.csv"
