@@ -67,5 +67,3 @@ class Test_2(unittest.TestCase):
         closing a test...
         """
         pass
-
-rm ./Rectangle.json
