@@ -1,23 +1,23 @@
 #!/usr/bin/python3
 """
-This module
-contains the
-Base class
+    This module
+    contains the
+    Base class
 """
 
 from models.base import Base
 """
-imports from parent class Base
+    imports from parent class Base
 """
 
 
 class Rectangle(Base):
     """
-    a rectangle class
+        a rectangle class
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Initialises the Rectangle class
+            Initialises the Rectangle class
         """
         super().__init__()
         if id is not None:
@@ -46,14 +46,14 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-        retrieves the width
+            retrieves the width
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        sets width
+            sets width
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -64,14 +64,14 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-        retrieves the height
+            retrieves the height
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        sets height
+            sets height
         """
         if type(value) != int:
             raise TypeError("height must be an integer")
@@ -82,14 +82,14 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-        retrieves the x
+            retrieves the x
         """
         return self.__x
 
     @x.setter
     def x(self, value):
         """
-        sets x
+            sets x
         """
         if type(value) != int:
             raise TypeError("x must be an integer")
@@ -100,14 +100,14 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-        retrieves the y
+            retrieves the y
         """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-        sets y
+            sets y
         """
         if type(value) != int:
             raise TypeError("y must be an integer")
@@ -117,13 +117,13 @@ class Rectangle(Base):
 
     def area(self):
         """
-        return the area of the rectangle
+            return the area of the rectangle
         """
         return self.__width * self.__height
 
     def display(self):
         """that prints in stdout the Rectangle instance
-        with the character # and position it base on x and y
+            with the character # and position it base on x and y
         """
         for i in range(self.__y):
             print()
@@ -133,7 +133,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """a function that gets called when
-        the str builtin or print is called
+            the str builtin or print is called
         """
         return "[Rectangle]" + " " + "(" + str(self.id) + ")"\
             + " " + str(self.__x) + "/" + str(self.__y) + " " + "-"\
@@ -141,7 +141,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """a function that Update the class Rectangle
-        by assigning an argument to each attribute
+            by assigning an argument to each attribute
         """
         if len(args) != 0:
             if type(args[0]) != dict:
@@ -171,7 +171,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """a function that returns a dict representation
-        of a class, or it's instance when called
+            of a class, or it's instance when called
         """
         keys = ["id", "width", "height", "x", "y"]
         d = {}
