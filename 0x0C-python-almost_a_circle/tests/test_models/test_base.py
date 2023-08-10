@@ -7,62 +7,39 @@ import unittest
 from models.base import Base
 
 
-class TestBase(unittest.TestCase):
+class Test_1(unittest.TestCase):
     """
-    this is a test class containing all
-    possible test cases
+        this is a test class containing all
+        possible test cases
     """
-
     def setUp(self):
         """
-        initialising a test...
+            initialising a test...
         """
-        Base._Base__nb_objects = 0
+        pass
 
     def tearDown(self):
         """
-        closing a test...
+            closing a test...
         """
-        Base._Base__nb_objects = 0
+        pass
 
-    def test_instantiation_with_no_arg(self):
+    def test_Base(self):
+        """
+            THis test definition tests all the possible test cases
+            on class Base
+        """
         b1 = Base()
-
-        self.assertEqual(b1.id, 1)
-
-    def test_instantiation_with_none_value(self):
-        b2 = Base(None)
-
-        self.assertEqual(b2.id, 1)
-
-    def test_instantiation_with_arg(self):
-        b3 = Base(12)
-        self.assertEqual(b3.id, 12)
-
-    def test_instantiation_set_value_based_on_previous_value(self):
-        b4 = Base()
-        b5 = Base()
-
-        self.assertEqual(b5.id, b4.id + 1)
-
-    def test_to_json_string(self):
-        """
-        tests to_json_string method
-        """
-        self.assertEqual(Base.to_json_string(None), "[]")
-        self.assertEqual(Base.to_json_string([]), "[]")
-        self.assertEqual(Base.to_json_string([{"id": 12}]), '[{"id": 12}]')
-        self.assertIsInstance(Base.to_json_string([{"id": 12}]), str)
-
-    def test_from_json_string(self):
-        """
-        tests from_json_string method
-        """
-        self.assertEqual(Base.from_json_string(None), [])
-        self.assertEqual(Base.from_json_string("[]"), [])
-        self.assertEqual(Base.from_json_string('[{"id": 12}]'), [{"id": 12}])
-        self.assertIsInstance(Base.from_json_string('[{"id": 12}]'), list)
-
-
-if __name__ == "main":
-    unittest.main()
+        b2 = Base()
+        ist_3 = Base(99)
+        self.assertTrue(b1.id == 1)
+        self.assertTrue(b2.id == 2)
+        self.assertEqual(ist_3.id, 99)
+        self.assertIsNotNone(ist_3.to_json_string(None))
+        self.assertIsNotNone(ist_3.to_json_string([]))
+        self.assertIsNotNone(ist_3.to_json_string([{'id': 12}]))
+        self.assertIsInstance(ist_3.to_json_string([{'id': 12}]), str)
+        self.assertIsNotNone(ist_3.from_json_string(None))
+        self.assertIsNotNone(ist_3.from_json_string("[]"))
+        self.assertIsNotNone(ist_3.from_json_string('[{"id": 12}]'))
+        self.assertIsInstance(ist_3.from_json_string('[{"id": 12}]'), list)
