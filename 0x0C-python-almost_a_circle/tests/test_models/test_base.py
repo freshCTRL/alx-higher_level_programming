@@ -17,13 +17,13 @@ class TestBase(unittest.TestCase):
         """
         initialising a test...
         """
-        pass
+        Base._Base__nb_objects = 0
 
     def tearDown(self):
         """
         closing a test...
         """
-        pass
+        Base._Base__nb_objects = 0
 
     def test_instantiation_with_no_arg(self):
         b1 = Base()
