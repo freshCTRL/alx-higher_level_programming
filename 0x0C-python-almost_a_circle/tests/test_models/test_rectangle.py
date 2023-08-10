@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-THis module contain possible test cases for the
-class Base, Square, and Rectangle
+    THis module contain possible test cases for the
+    class Base, Square, and Rectangle
 """
 import unittest
 from models.rectangle import Rectangle
@@ -9,25 +9,25 @@ from models.rectangle import Rectangle
 
 class Test_2(unittest.TestCase):
     """
-    this is a test class containing all
-    possible test cases
+        this is a test class containing all
+        possible test cases
     """
     def setUp(self):
         """
-        initialises a test...
+            initialises a test...
         """
         pass
 
     def tearDown(self):
         """
-        closing a test...
+            closing a test...
         """
         pass
 
     def test_Rectangle(self):
         """
-        THis test definition tests all the possible test cases
-        on class Rectangle
+            THis test definition tests all the possible test cases
+            on class Rectangle
         """
         valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
         ist_2r = Rectangle(1, 2)
