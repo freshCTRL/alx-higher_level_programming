@@ -18,6 +18,12 @@ class Test_2(unittest.TestCase):
         """
         pass
 
+    def tearDown(self):
+        """
+        closing a test...
+        """
+        pass
+
     def test_Rectangle(self):
         """
         THis test definition tests all the possible test cases
@@ -65,9 +71,3 @@ class Test_2(unittest.TestCase):
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNotNone(Rectangle.load_from_file())
-
-    def tearDown(self):
-        """
-        closing a test...
-        """
-        pass
