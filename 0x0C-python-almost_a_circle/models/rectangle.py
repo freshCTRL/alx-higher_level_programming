@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-    This module
-    contains the
+    This module contains the
     Base class
 """
 
