@@ -68,4 +68,4 @@ class Test_2(unittest.TestCase):
         """
         pass
 
-rm Rectangle.json
+rm ./Rectangle.json
