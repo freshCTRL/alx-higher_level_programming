@@ -19,6 +19,12 @@ class Test_3(unittest.TestCase):
         """
         pass
 
+    def tearDown(self):
+        """
+        closing a test...
+        """
+        pass
+
     def test_Square(self):
         """
         THis test definition tests all the possible test cases
@@ -52,8 +58,3 @@ class Test_3(unittest.TestCase):
         self.assertIsNone(Square.save_to_file([]))
         self.assertIsNone(Square.save_to_file([Square(1)]))
         self.assertIsNotNone(Square.load_from_file())
-
-    def tearDown(self):
-        """
-        closing a test...
-        """
