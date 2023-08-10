@@ -12,7 +12,7 @@ class Test_1(unittest.TestCase):
     this is a test class containing all
     possible test cases
     """
-    def setUp():
+    def setUp(self):
         """
         initialises a test...
         """
@@ -61,8 +61,8 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNotNone(Rectangle.load_from_file())
-    def tearDown():
+    def tearDown(self):
         """
         closing a test...
         """
-        rm *.json
+        rm Rectangle.json
