@@ -17,6 +17,7 @@ class Test_1(unittest.TestCase):
         initialising a test...
         """
         pass
+
     def test_Base(self):
         """
         THis test definition tests all the possible test cases
@@ -36,6 +37,7 @@ class Test_1(unittest.TestCase):
         self.assertIsNotNone(ist_3.from_json_string("[]"))
         self.assertIsNotNone(ist_3.from_json_string('[{"id": 12}]'))
         self.assertIsInstance(ist_3.from_json_string('[{"id": 12}]'), list)
+
     def tearDown(self):
         """
         closing a test...

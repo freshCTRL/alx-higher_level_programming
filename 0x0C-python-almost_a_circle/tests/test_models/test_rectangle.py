@@ -7,7 +7,7 @@ import unittest
 from models.rectangle import Rectangle
 
 
-class Test_2(unittest.TestCase): 
+class Test_2(unittest.TestCase):
     """
     this is a test class containing all
     possible test cases
@@ -17,6 +17,7 @@ class Test_2(unittest.TestCase):
         initialises a test...
         """
         pass
+
     def test_Rectangle(self):
         """
         THis test definition tests all the possible test cases
@@ -54,14 +55,17 @@ class Test_2(unittest.TestCase):
         self.assertIsNone(ist_1r.update(**valu))
         self.assertIsNotNone(Rectangle.create(**{"id": 89}))
         self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1}))
-        self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2}))
-        self.assertIsNotNone(Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3}))
+        var1 = {"id": 89, "width": 1, "height": 2}
+        self.assertIsNotNone(Rectangle.create(**var1))
+        var2 = {"id": 89, "width": 1, "height": 2, "x": 3}
+        self.assertIsNotNone(Rectangle.create(**var2))
         self.assertIsNotNone(Rectangle.create(**valu))
         self.assertIsNone(Rectangle.save_to_file(None))
         self.assertIsNone(Rectangle.save_to_file([]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
         self.assertIsNotNone(Rectangle.load_from_file())
+
     def tearDown(self):
         """
         closing a test...

@@ -18,6 +18,7 @@ class Test_3(unittest.TestCase):
         initialising a test...
         """
         pass
+
     def test_Square(self):
         """
         THis test definition tests all the possible test cases
@@ -40,16 +41,18 @@ class Test_3(unittest.TestCase):
         self.assertIsNone(Square(1, 2, 3).update(89, 1, 2, 3))
         self.assertIsNone(Square(1, 2, 3).update(**{"id": 89}))
         self.assertIsNone(Square(1, 2, 3).update(**{"id": 89, "size": 1}))
-        self.assertIsNone(Square(1, 2, 3).update(**{'id': 89, 'size': 1, 'x': 2, 'y': 3}))
+        value = {'id': 89, 'size': 1, 'x': 2, 'y': 3}
+        self.assertIsNone(Square(1, 2, 3).update(**value))
         self.assertIsNotNone(Square.create(**{'id': 89}))
         self.assertIsNotNone(Square.create(**{'id': 89, 'size': 1}))
         self.assertIsNotNone(Square.create(**{'id': 89, 'size': 1, 'x': 2}))
-        self.assertIsNotNone(Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3}))
+        self.assertIsNotNone(Square.create(**value))
         self.assertEqual(Square.load_from_file(), [])
         self.assertIsNone(Square.save_to_file(None))
         self.assertIsNone(Square.save_to_file([]))
         self.assertIsNone(Square.save_to_file([Square(1)]))
         self.assertIsNotNone(Square.load_from_file())
+
     def tearDown(self):
         """
         closing a test...
