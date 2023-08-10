@@ -58,4 +58,3 @@ class Test_3(unittest.TestCase):
         self.assertIsNone(Square.save_to_file([]))
         self.assertIsNone(Square.save_to_file([Square(1)]))
         self.assertIsNotNone(Square.load_from_file())
-
