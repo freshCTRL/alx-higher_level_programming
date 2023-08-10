@@ -55,4 +55,4 @@ class Test_3(unittest.TestCase):
         closing a test...
         """
 
-rm Square.json
+rm ./Square.json
