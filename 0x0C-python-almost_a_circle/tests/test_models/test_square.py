@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-THis module contain possible test cases for the
-class Base, Square, and Rectangle
+    THis module contain possible test cases for the
+    class Base, Square, and Rectangle
 """
 import unittest
 from models.square import Square
@@ -10,25 +10,25 @@ from models.square import Square
 class Test_3(unittest.TestCase):
 
     """
-    this is a test class containing all
-    possible test cases
+        this is a test class containing all
+        possible test cases
     """
     def setUp(self):
         """
-        initialising a test...
+            initialising a test...
         """
         pass
 
     def tearDown(self):
         """
-        closing a test...
+            closing a test...
         """
         pass
 
     def test_Square(self):
         """
-        THis test definition tests all the possible test cases
-        on class Square
+            THis test definition tests all the possible test cases
+            on class Square
         """
         self.assertIsNotNone(Square(1))
         self.assertIsNotNone(Square(1, 2))
