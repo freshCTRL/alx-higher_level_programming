@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-THis module contain possible test cases for the
-class Base, Square, and Rectangle
+    THis module contain possible test cases for the
+    class Base, Square, and Rectangle
 """
 import unittest
 from models.base import Base
@@ -9,25 +9,25 @@ from models.base import Base
 
 class Test_1(unittest.TestCase):
     """
-    this is a test class containing all
-    possible test cases
+        this is a test class containing all
+        possible test cases
     """
     def setUp(self):
         """
-        initialising a test...
+            initialising a test...
         """
         pass
 
     def tearDown(self):
         """
-        closing a test...
+            closing a test...
         """
         pass
 
     def test_Base(self):
         """
-        THis test definition tests all the possible test cases
-        on class Base
+            THis test definition tests all the possible test cases
+            on class Base
         """
         b1 = Base()
         b2 = Base()
