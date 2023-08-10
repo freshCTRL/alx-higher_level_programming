@@ -13,7 +13,7 @@ class Test_1(unittest.TestCase):
     this is a test class containing all
     possible test cases
     """
-    def setUp():
+    def setUp(self):
         """
         initialising a test...
         """
@@ -50,8 +50,8 @@ class Test_1(unittest.TestCase):
         self.assertIsNone(Square.save_to_file([]))
         self.assertIsNone(Square.save_to_file([Square(1)]))
         self.assertIsNotNone(Square.load_from_file())
-    def tearDown():
+    def tearDown(self):
         """
         closing a test...
         """
-        rm *.json
+        rm Square.json
