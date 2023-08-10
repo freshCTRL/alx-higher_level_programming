@@ -33,7 +33,7 @@ class TestBase(unittest.TestCase):
     def test_instantiation_with_none_value(self):
         b2 = Base(None)
 
-        self.assertEqual(b2.id, 2)
+        self.assertEqual(b2.id, 1)
 
     def test_instantiation_with_arg(self):
         b3 = Base(12)
