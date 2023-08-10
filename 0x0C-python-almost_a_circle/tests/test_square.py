@@ -54,4 +54,5 @@ class Test_1(unittest.TestCase):
         """
         closing a test...
         """
-        rm Square.json
+
+rm Square.json
