@@ -43,3 +43,4 @@ class Test_1(unittest.TestCase):
         self.assertIsNotNone(ist_3.from_json_string("[]"))
         self.assertIsNotNone(ist_3.from_json_string('[{"id": 12}]'))
         self.assertIsInstance(ist_3.from_json_string('[{"id": 12}]'), list)
+
