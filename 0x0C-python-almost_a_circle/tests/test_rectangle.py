@@ -14,7 +14,7 @@ class Test_1(unittest.TestCase):
     """
     def setUp():
         """
-        initialises the class
+        initialises the class...
         """
         valu = {"id": 89, "width": 1, "height": 2, "x": 3, "y": 4}
         ist_2r = Rectangle(1, 2)
@@ -63,6 +63,6 @@ class Test_1(unittest.TestCase):
         self.assertIsNotNone(Rectangle.load_from_file())
     def tearDown():
         """
-        closes the class
+        closing the class...
         """
         rm *.json
