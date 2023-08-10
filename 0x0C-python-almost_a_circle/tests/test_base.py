@@ -12,7 +12,7 @@ class Test_1(unittest.TestCase):
     this is a test class containing all
     possible test cases
     """
-    def setUp():
+    def setUp(self):
         """
         initialising a test...
         """
@@ -35,7 +35,7 @@ class Test_1(unittest.TestCase):
         self.assertIsNotNone(ist_3.from_json_string("[]"))
         self.assertIsNotNone(ist_3.from_json_string('[{"id": 12}]'))
         self.assertIsInstance(ist_3.from_json_string('[{"id": 12}]'), list)
-    def tearDown():
+    def tearDown(self):
         """
         closing a test...
         """
