@@ -15,7 +15,7 @@ class Test_1(unittest.TestCase):
     """
     def setUp():
         """
-        initialising the class...
+        initialising a test...
         """
         pass
     def test_Square(self):
@@ -52,6 +52,6 @@ class Test_1(unittest.TestCase):
         self.assertIsNotNone(Square.load_from_file())
     def tearDown():
         """
-        closing the class...
+        closing a test...
         """
         rm *.json
