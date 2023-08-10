@@ -16,14 +16,15 @@ class Test_1(unittest.TestCase):
         """
         initialising a test...
         """
-        b1 = Base()
-        b2 = Base()
-        ist_3 = Base(99)
+        pass
     def test_Base(self):
         """
         THis test definition tests all the possible test cases
         on class Base
         """
+        b1 = Base()
+        b2 = Base()
+        ist_3 = Base(99)
         self.assertTrue(b1.id == 1)
         self.assertTrue(b2.id == 2)
         self.assertEqual(ist_3.id, 99)
@@ -39,6 +40,4 @@ class Test_1(unittest.TestCase):
         """
         closing a test...
         """
-        del b1
-        del b2
-        del ist_3
+        pass
