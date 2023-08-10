@@ -30,7 +30,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """a function that that returns the JSON string
+        """
+            a function that that returns the JSON string
             representation of list_dictionaries:
         """
         import json
@@ -41,7 +42,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """a function that writes the JSON string representation
+        """
+            a function that writes the JSON string representation
             of list_objs to a file:
         """
         if list_objs is not None:
@@ -54,7 +56,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """a function that returns a list of JSON
+        """
+            a function that returns a list of JSON
             string representation json_string
         """
         if json_string is None or len(json_string) == 0:
@@ -63,7 +66,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """a function  that returns an instance with
+        """
+            a function  that returns an instance with
             all attributes already set:
         """
         if f"{cls.__name__}" != "Square":
@@ -92,7 +96,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """a function that writes object(dictionaries)
+        """
+            a function that writes object(dictionaries)
             of list_objs to a csv file:
         """
         head = []
@@ -114,7 +119,8 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """a function that pulls object(dictionaries)
+        """
+            a function that pulls object(dictionaries)
             of list_objs from a csv file:
         """
         import os
