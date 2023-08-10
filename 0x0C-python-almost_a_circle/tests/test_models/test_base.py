@@ -17,13 +17,13 @@ class TestBase(unittest.TestCase):
         """
         initialising a test...
         """
-        sys.stdout = StringIO()
+        pass
 
     def tearDown(self):
         """
         closing a test...
         """
-        sys.stdout = sys.__stdout__
+        pass
 
     def test_id(self):
         b1 = Base()
