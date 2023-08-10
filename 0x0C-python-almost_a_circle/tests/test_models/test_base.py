@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
     THis module contain possible test cases for the
     class Base, Square, and Rectangle
@@ -9,37 +8,43 @@ from models.base import Base
 
 class Test_1(unittest.TestCase):
     """
-        this is a test class containing all
-        possible test cases
+    this is a test class containing all
+    possible test cases
     """
+
     def setUp(self):
         """
-            initialising a test...
+        initialising a test...
         """
         pass
 
     def tearDown(self):
         """
-            closing a test...
+        closing a test...
         """
         pass
 
-    def test_Base(self):
-        """
-            THis test definition tests all the possible test cases
-            on class Base
-        """
+    def test_id(self):
         b1 = Base()
         b2 = Base()
-        ist_3 = Base(99)
-        self.assertTrue(b1.id == 1)
-        self.assertTrue(b2.id == 2)
-        self.assertEqual(ist_3.id, 99)
-        self.assertIsNotNone(ist_3.to_json_string(None))
-        self.assertIsNotNone(ist_3.to_json_string([]))
-        self.assertIsNotNone(ist_3.to_json_string([{'id': 12}]))
-        self.assertIsInstance(ist_3.to_json_string([{'id': 12}]), str)
-        self.assertIsNotNone(ist_3.from_json_string(None))
-        self.assertIsNotNone(ist_3.from_json_string("[]"))
-        self.assertIsNotNone(ist_3.from_json_string('[{"id": 12}]'))
-        self.assertIsInstance(ist_3.from_json_string('[{"id": 12}]'), list)
+        b3 = Base(id=None)
+        b4 = Base(id=99)
+        b5 = Base()
+
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
+        self.assertEqual(b3.id, 3)
+        self.assertEqual(b4.id, 99)
+        self.assertEqual(b5.id, 4)
+
+    def test_to_json_string(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertEqual(Base.to_json_string([{"id": 12}]), '[{"id": 12}]')
+        self.assertIsInstance(Base.to_json_string([{"id": 12}]), str)
+
+    def test_from_json_string(self):
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string("[]"), [])
+        self.assertEqual(Base.from_json_string('[{"id": 12}]'), [{"id": 12}])
+        self.assertIsInstance(Base.from_json_string('[{"id": 12}]'), list)
