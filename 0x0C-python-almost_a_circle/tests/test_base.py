@@ -14,7 +14,7 @@ class Test_1(unittest.TestCase):
     """
     def setUp():
         """
-        initialising a test
+        initialising a test...
         """
         b1 = Base()
         b2 = Base()
@@ -37,7 +37,7 @@ class Test_1(unittest.TestCase):
         self.assertIsInstance(ist_3.from_json_string('[{"id": 12}]'), list)
     def tearDown():
         """
-        closing a test
+        closing a test...
         """
         del b1
         del b2
