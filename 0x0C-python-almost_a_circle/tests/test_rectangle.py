@@ -7,7 +7,7 @@ import unittest
 from models.rectangle import Rectangle
 
 
-class Test_3(unittest.TestCase): 
+class Test_2(unittest.TestCase): 
     """
     this is a test class containing all
     possible test cases
