@@ -7,7 +7,7 @@ import unittest
 from models.square import Square
 
 
-class Test_1(unittest.TestCase):
+class Test_3(unittest.TestCase):
 
     """
     this is a test class containing all
