@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-    THis module contains the class square and it inherits
-    functions of the class rectangle, it also import a
-    module containing the class rectangle
+    THis module contains the class square and it inherits functions of the class
+    rectangle, it also import a module containing the class rectangle
 """
 
 from models.rectangle import Rectangle
-"""this line import the class rectangle
+"""
+    this line import the class rectangle
     from the models module
 """
 
@@ -53,7 +53,8 @@ class Square(Rectangle):
         setattr(self, "height", value)
 
     def update(self, *args, **kwargs):
-        """This function update the class Square by assigning
+        """
+            This function update the class Square by assigning
             to attributes
         """
         if len(args) != 0:
@@ -69,7 +70,8 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """a function that returns a dict representation
+        """
+            a function that returns a dict representation
             of a class, or it's instance when called
         """
         keys = ["id", "size", "x", "y"]
