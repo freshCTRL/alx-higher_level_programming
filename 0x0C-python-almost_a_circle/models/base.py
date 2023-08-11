@@ -47,8 +47,15 @@ class Base:
             of list_objs to a file:
         """
         if list_objs is not None:
-            new_list = [obj.to_dictionary() for obj in list_objs]
-            a_string = cls.to_json_string(new_list)
+            if len(list_objs) == 1 or 0:
+                if len(list_objs) == 0:
+                    a_string = cls.to_json_string([])
+                else:
+                    new_list = list_objs[0].to_dictionary()
+                    a_string = cls.to_json_string(new_list)
+            else:
+                new_list = [obj.to_dictionary() for obj in list_objs]
+                a_string = cls.to_json_string(new_list)
         else:
             a_string = cls.to_json_string([])
         with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") as file:
