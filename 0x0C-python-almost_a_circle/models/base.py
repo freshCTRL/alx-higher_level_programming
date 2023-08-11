@@ -48,7 +48,7 @@ class Base:
         """
         if list_objs is None:
             a_string = cls.to_json_string([])
-        elif len(list_objs) is 0:
+        elif not len(list_objs):
             a_string = cls.to_json_string([])
         else:
             new_list = [obj.to_dictionary() for obj in list_objs]
