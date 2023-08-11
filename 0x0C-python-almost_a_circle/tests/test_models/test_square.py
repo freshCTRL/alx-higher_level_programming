@@ -33,10 +33,10 @@ class Test_3(unittest.TestCase):
         self.assertEqual(sample1.size, 1)
         sample1 = Square(1, 2)
         self.assertEqual(sample1.to_dictionary(),
-                         {'id': 20, 'size': 1, 'x': 2, 'y': 0})
+                         {'id': 26, 'size': 1, 'x': 2, 'y': 0})
         sample1 = Square(1, 2, 3)
         self.assertEqual(sample1.to_dictionary(),
-                         {'id': 21, 'size': 1, 'x': 2, 'y': 3})
+                         {'id': 27, 'size': 1, 'x': 2, 'y': 3})
         self.assertRaises(TypeError, Square, 1, "2")
         self.assertRaises(TypeError, Square, 1, 2, "3")
         self.assertRaises(ValueError, Square, -1)
