@@ -29,16 +29,16 @@ class Test_2(unittest.TestCase):
             THis test definition tests all the possible test cases
             on class Rectangle
         """
-        sample1 = Rectangle(id=None)
+        sample1 = Rectangle()
         sample1 = Rectangle(1, 2)
         self.assertEqual(sample1.to_dictionary(),
-                         {'id': 1, 'width': 1, 'height': 2, 'x': 0, 'y': 0})
+                         {'id': 2, 'width': 1, 'height': 2, 'x': 0, 'y': 0})
         sample1 = Rectangle(1, 2, 3)
         self.assertEqual(sample1.to_dictionary(),
-                         {'id': 2, 'width': 1, 'height': 2, 'x': 3, 'y': 0})
+                         {'id': 3, 'width': 1, 'height': 2, 'x': 3, 'y': 0})
         sample1 = Rectangle(1, 2, 3, 4)
         self.assertEqual(sample1.to_dictionary(),
-                         {'id': 3, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+                         {'id': 4, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
         sample1 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(sample1.to_dictionary(),
                          {'id': 5, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
