@@ -129,7 +129,7 @@ class Rectangle(Base):
             print()
         for i in range(self.height):
             if i != self.__height:
-                print("{}{}".format(self.__x * " ", self.__width * '#'))
+                return "{}{}".format(self.__x * " ", self.__width * '#')
 
     def __str__(self):
         """
