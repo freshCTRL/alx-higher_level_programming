@@ -63,7 +63,8 @@ class Test_3(unittest.TestCase):
         val = None
         Square.save_to_file(val)
         self.assertTrue(Square.load_from_file() == [])
-        Square.save_to_file([])
+        val = []
+        Square.save_to_file(val)
         self.assertIsInstance(Square.load_from_file(), list)
         val = [Square(1)]
         Square.save_to_file(val)
