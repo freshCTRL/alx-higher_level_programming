@@ -66,8 +66,11 @@ class Test_3(unittest.TestCase):
         # val = []
         # Square.save_to_file(val)
         # self.assertTrue(Square.load_from_file() == [])
-        val = [Square(1)]
-        Square.save_to_file(val)
+        # val = [Square(1)]
+        # Square.save_to_file(val)
+        val = Square(78)
+        val_1 = Square(89)
+        Square.save_to_file([val, val_1])
         self.assertIsInstance(Square.load_from_file(), list)
         sample4 = Square(1)
         self.assertTrue(sample4.display() == "#")
