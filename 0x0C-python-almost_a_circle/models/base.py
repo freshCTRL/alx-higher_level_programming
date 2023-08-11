@@ -46,7 +46,9 @@ class Base:
             a function that writes the JSON string representation
             of list_objs to a file:
         """
-        if list_objs is None or []:
+        if list_objs is None:
+            a_string = cls.to_json_string([])
+        elif len(list_objs) == 0:
             a_string = cls.to_json_string([])
         else:
             new_list = [obj.to_dictionary() for obj in list_objs]
