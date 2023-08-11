@@ -73,9 +73,9 @@ class Test_3(unittest.TestCase):
         Square.save_to_file([val1, val2])
         self.assertIsInstance(Square.load_from_file(), list)
         sample2 = Square.create(**{'id': 89, 'size': 1})
-        self.assertTrue(sample2.display(), "#")
+        self.assertEqual(sample2.display(), "#")
         sample2 = Square.create(**{'id': 89, 'size': 1, 'x': 2})
-        self.assertTrue(sample2.display(), "  #")
+        self.assertEqual(sample2.display(), "  #")
         sample2 = Square(1, 2, 3, 4)
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
