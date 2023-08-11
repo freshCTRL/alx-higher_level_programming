@@ -51,7 +51,7 @@ class Base:
                 if len(list_objs) == 0:
                     a_string = cls.to_json_string([])
                 else:
-                    new_list = list_objs[0].to_dictionary()
+                    new_list = [list_objs[0].to_dictionary()]
                     a_string = cls.to_json_string(new_list)
             else:
                 new_list = [obj.to_dictionary() for obj in list_objs]
