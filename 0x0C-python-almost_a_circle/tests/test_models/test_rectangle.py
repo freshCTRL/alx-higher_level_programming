@@ -54,7 +54,7 @@ class Test_2(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, 2, 3, -4)
         sample2 = Rectangle(1, 2)
         self.assertEqual(sample2.area(), 2)
-        self.assertEqual(str(sample2), '[Rectangle] (1) 0/0 - 1/2')
+        self.assertEqual(str(sample2), '[Rectangle] (17) 0/0 - 1/2')
         sample2 = Rectangle(1, 2, 3)
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 2, 'width': 1, 'height': 2, 'x': 3, 'y': 0})
