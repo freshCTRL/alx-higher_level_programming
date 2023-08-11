@@ -93,7 +93,7 @@ class Test_2(unittest.TestCase):
         self.assertTrue(sample3.load_from_file() == [])
         val = []
         sample2.save_to_file(val)
-        self.assertIsInstance(sample2.load_from_file(), list)
+        self.assertIsTrue(sample2.load_from_file() == [])
         val = [Rectangle(1, 2)]
         Rectangle.save_to_file(val)
         self.assertIsInstance(Rectangle.load_from_file(), list)
