@@ -19,6 +19,8 @@ class Rectangle(Base):
             Initialises the Rectangle class
         """
         super().__init__()
+        if id is not None:
+            self.id = id
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
