@@ -57,7 +57,7 @@ class Test_2(unittest.TestCase):
         self.assertEqual(str(sample2), '[Rectangle] (17) 0/0 - 1/2')
         sample2 = Rectangle(1, 2, 3)
         self.assertEqual(sample2.to_dictionary(),
-                         {'id': 2, 'width': 1, 'height': 2, 'x': 3, 'y': 0})
+                         {'id': 18, 'width': 1, 'height': 2, 'x': 3, 'y': 0})
         sample2.update()
         self.assertEqual(str(sample2), '[Rectangle] (2) 3/0 - 1/2')
         sample2.update(78)
