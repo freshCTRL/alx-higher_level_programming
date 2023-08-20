@@ -91,8 +91,7 @@ class Test_2(unittest.TestCase):
         Rectangle.save_to_file(None)
         a = Rectangle.load_from_file()
         Rectangle.save_to_file([])
-        b = Rectangle.load_from_file()
-        self.assertEqual(a, b)
+        self.assertEqual(a, Rectangle.load_from_file())
         val = [Rectangle(1, 2)]
         Rectangle.save_to_file(val)
         self.assertEqual(Rectangle.load_from_file()[0].width, 1)
