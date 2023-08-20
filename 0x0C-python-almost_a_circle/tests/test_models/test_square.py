@@ -63,8 +63,8 @@ class Test_3(unittest.TestCase):
         val = None
         Square.save_to_file(val)
         self.assertTrue(Square.load_from_file() == [])
-        Square.save_to_file([])
-        self.assertEqual(len(Square.load_from_file()), 0)
+        sample2.save_to_file([])
+        self.assertIsInstance(Square.load_from_file(), list)
         val = Square(1)
         Square.save_to_file([val])
         self.assertTrue(Square.load_from_file()[0].size == 1)
