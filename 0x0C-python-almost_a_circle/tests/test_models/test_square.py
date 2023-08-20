@@ -63,22 +63,32 @@ class Test_3(unittest.TestCase):
         self.assertEqual(str(sample2), '[Square] (89) 0/0 - 1')
         sample2 = Square.create(**{'id': 89, 'size': 1, 'x': 2})
         self.assertEqual(str(sample2), '[Square] (89) 2/0 - 1')
+        sample2 = Square(1, 2, 3, 4)
+        self.assertEqual(sample2.to_dictionary(),
+                         {'id': 4, 'size': 1, 'x': 2, 'y': 3})
 
-    def test_load_file(self):
+    def test_empty_file(self):
         """
             test save and load method
         """
         Square.save_to_file([])
         self.assertTrue(Square.load_from_file() == [])
+
+    def test_emptylist_file(self):
+        """
+            test save and load method
+        """
         val = None
         Square.save_to_file(val)
         self.assertTrue(Square.load_from_file() == [])
+
+    def test_load_file(self):
+        """
+            test save and load method
+        """
         val = Square(1)
         Square.save_to_file([val])
         self.assertTrue(Square.load_from_file()[0].size == 1)
-        sample2 = Square(1, 2, 3, 4)
-        self.assertEqual(sample2.to_dictionary(),
-                         {'id': 4, 'size': 1, 'x': 2, 'y': 3})
 
     def test_square_display(self):
         """
