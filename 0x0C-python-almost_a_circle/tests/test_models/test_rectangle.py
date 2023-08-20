@@ -4,6 +4,7 @@
     class Base, Square, and Rectangle
 """
 import unittest
+import os
 from models.rectangle import Rectangle
 
 
@@ -90,9 +91,12 @@ class Test_2(unittest.TestCase):
         self.assertEqual(str(sample3), '[Rectangle] (89) 3/4 - 2/2')
         Rectangle.save_to_file([])
         self.assertEqual(Rectangle.load_from_file(), [])
+        os.remove("Rectangle.json")
         val = [Rectangle(1, 2)]
         Rectangle.save_to_file(val)
         self.assertEqual(Rectangle.load_from_file()[0].width, 1)
         self.assertEqual(Rectangle.load_from_file()[0].height, 2)
+        os.remove("Rectangle.json")
         Rectangle.save_to_file(None)
         self.assertEqual(Rectangle.load_from_file(), [])
+        os.remove("Rectangle.json")
