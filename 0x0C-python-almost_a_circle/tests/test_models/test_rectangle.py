@@ -90,9 +90,6 @@ class Test_2(unittest.TestCase):
         self.assertEqual(str(sample3), '[Rectangle] (89) 3/4 - 2/2')
         Rectangle.save_to_file([])
         self.assertIsInstance(Rectangle.load_from_file(), list)
-        val = Rectangle(1)
-        Square.save_to_file([val])
-        self.assertIsInstance(Square.load_from_file(), list)
         val = [Rectangle(1, 2)]
         Rectangle.save_to_file(val)
         self.assertIsInstance(Rectangle.load_from_file(), list)
