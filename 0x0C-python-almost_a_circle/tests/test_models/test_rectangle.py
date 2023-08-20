@@ -88,6 +88,11 @@ class Test_2(unittest.TestCase):
         val = {"id": 89, "width": 2, "height": 2, "x": 3, "y": 4}
         sample3 = Rectangle.create(**val)
         self.assertEqual(str(sample3), '[Rectangle] (89) 3/4 - 2/2')
+
+    def test_load_file(self):
+        """
+            test save and load method
+        """
         Rectangle.save_to_file([])
         self.assertTrue(Rectangle.load_from_file() == [])
         val = [Rectangle(1, 2)]
