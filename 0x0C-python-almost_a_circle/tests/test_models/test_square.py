@@ -68,9 +68,9 @@ class Test_3(unittest.TestCase):
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
         val = Square(1)
         Square.save_to_file([val])
-        self.assertTrue(Square.load_from_file()[0].size == 1)
+        self.assertEqual(Square.load_from_file()[0].size, 1)
         Square.save_to_file([])
-        self.assertTrue(Square.load_from_file() == [])
+        self.assertEqual(Square.load_from_file(), [])
         Square.save_to_file(None)
         self.assertEqual(Square.load_from_file(), [])
 
