@@ -80,3 +80,7 @@ class Test_3(unittest.TestCase):
             sample4 = Square(1)
             sample4.display()
         assert fake_stdout.getvalue() == "#\n"
+        with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:
+            sample4 = Square(1, 2)
+            sample4.display()
+        assert fake_stdout.getvalue() == "  #\n"
