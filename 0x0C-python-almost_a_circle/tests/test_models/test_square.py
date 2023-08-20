@@ -4,7 +4,6 @@
     class Base, Square, and Rectangle
 """
 import unittest
-from nose.tools import *
 from unittest import mock
 from unittest.mock import patch
 import io
@@ -77,7 +76,7 @@ class Test_3(unittest.TestCase):
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
 
     @patch('sys.stdout', new_callable=io.StringIO)
-    def test_square_display(mock_stdout):
+    def test_square_display(self):
         sample4 = Square(1)
         sample4.display()
-        assert mock_stdout.getvalue() == '#\n'
+        assert self.getvalue() == '#\n'
