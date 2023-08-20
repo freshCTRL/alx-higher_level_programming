@@ -65,11 +65,9 @@ class Test_3(unittest.TestCase):
         self.assertTrue(Square.load_from_file() == [])
         val = Square(1)
         Square.save_to_file([val])
-        self.assertIsInstance(Square.load_from_file(), list)
+        self.assertTrue(Square.load_from_file()[0].size == 1)
         sample4 = Square(1)
         self.assertTrue(sample4.display() == "#")
-        # sample4 = Square(1, 2)
-        # self.assertIsNone(sample4.display())
         sample2 = Square(1, 2, 3, 4)
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
