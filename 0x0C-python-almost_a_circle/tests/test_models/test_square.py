@@ -69,10 +69,10 @@ class Test_3(unittest.TestCase):
         val = Square(1)
         Square.save_to_file([val])
         self.assertTrue(Square.load_from_file()[0].size == 1)
-        Square.save_to_file([])
-        self.assertTrue(Square.load_from_file() == [])
         val = None
         Square.save_to_file(val)
+        self.assertTrue(Square.load_from_file() == [])
+        Square.save_to_file([])
         self.assertTrue(Square.load_from_file() == [])
 
     def test_square_display(self):
