@@ -53,6 +53,8 @@ class Test_3(unittest.TestCase):
         sample1.update()
         self.assertEqual(str(sample1), '[Square] (28) 2/3 - 1')
         sample1.update(99)
+        Square.save_to_file(None)
+        self.assertEqual(Square.load_from_file(), [])
         self.assertEqual(str(sample1), '[Square] (99) 2/3 - 1')
         sample1.update(89, 1, 2, 3)
         self.assertEqual(str(sample1), '[Square] (89) 2/3 - 1')
@@ -68,8 +70,6 @@ class Test_3(unittest.TestCase):
         sample2 = Square(1, 2, 3, 4)
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
-        # Square.save_to_file(None)
-        # self.assertEqual(Square.load_from_file(), [])
         val = Square(1)
         Square.save_to_file([val])
         self.assertEqual(Square.load_from_file()[0].size, 1)
