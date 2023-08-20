@@ -71,8 +71,8 @@ class Test_3(unittest.TestCase):
         self.assertTrue(Square.load_from_file()[0].size == 1)
         Square.save_to_file([])
         self.assertTrue(Square.load_from_file() == [])
-        sample2.save_to_file(None)
-        self.assertTrue(sample2.load_from_file() == [])
+        Square.save_to_file(None)
+        self.assertEqual(Square.load_from_file(), [])
 
     def test_square_display(self):
         """
