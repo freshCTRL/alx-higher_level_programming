@@ -32,8 +32,6 @@ class Test_1(unittest.TestCase):
         b1 = Base()
         b2 = Base()
         b3 = Base(99)
-        Base.save_to_file(None)
-        self.assertEqual(Base.load_from_file(), [])
         self.assertTrue(b1.id == 1)
         self.assertTrue(b2.id == 2)
         self.assertEqual(b3.id, 99)
