@@ -68,8 +68,12 @@ class Test_3(unittest.TestCase):
         val = Square(1)
         Square.save_to_file([val])
         self.assertTrue(Square.load_from_file()[0].size == 1)
-        sample4 = Square(1)
-        self.assertTrue(sample4.display() == "#")
         sample2 = Square(1, 2, 3, 4)
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_square_display(mock_stdout):
+        sample4 = Square(1)
+        sample4.display()
+        assert mock_stdout.getvalue() == '#\n'
