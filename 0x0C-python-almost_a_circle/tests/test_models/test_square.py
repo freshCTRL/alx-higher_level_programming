@@ -4,6 +4,10 @@
     class Base, Square, and Rectangle
 """
 import unittest
+from nose.tools import *
+from unittest import mock
+from unittest.mock import patch
+import io
 from models.square import Square
 
 
