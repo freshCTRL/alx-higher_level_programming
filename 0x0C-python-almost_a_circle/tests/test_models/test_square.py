@@ -67,6 +67,9 @@ class Test_3(unittest.TestCase):
         self.assertTrue(Square.load_from_file() == [])
 
     def test_load_file(self):
+        """
+            test save and load method
+        """
         val = None
         Square.save_to_file(val)
         self.assertTrue(Square.load_from_file() == [])
@@ -78,6 +81,9 @@ class Test_3(unittest.TestCase):
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
 
     def test_square_display(self):
+        """
+            tests display method
+        """
         with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:
             sample4 = Square(1)
             sample4.display()
