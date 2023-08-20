@@ -94,6 +94,9 @@ class Base:
                 content = f.read()
             ls = cls.from_json_string(content)
 
+            if len(ls) == 0:
+                return [];
+
             return [cls.create(**item) for item in ls]
 
     @classmethod
@@ -133,6 +136,9 @@ class Base:
             with open(filename, mode="r", encoding="utf-8") as csvFile:
                 csv_reader = csv.DictReader(csvFile)
                 ls = [itm for itm in csv_reader]
+
+        if len(ls) == 0:
+            return [];
 
         for obj in ls:
             for key, values in obj.items():
