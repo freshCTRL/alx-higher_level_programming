@@ -89,7 +89,8 @@ class Test_2(unittest.TestCase):
         sample3 = Rectangle.create(**val)
         self.assertEqual(str(sample3), '[Rectangle] (89) 3/4 - 2/2')
         Rectangle.save_to_file([])
-        self.assertIsInstance(Rectangle.load_from_file(), list)
+        self.assertTrue(Rectangle.load_from_file() == [])
         val = [Rectangle(1, 2)]
         Rectangle.save_to_file(val)
-        self.assertIsInstance(Rectangle.load_from_file(), list)
+        self.assertTrue(Rectangle.load_from_file()[0].width == 1)
+        self.assertTrue(Rectangle.load_from_file()[0].height == 2)
