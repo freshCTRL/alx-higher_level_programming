@@ -7,6 +7,7 @@ import unittest
 from unittest import mock
 from unittest.mock import patch
 import io
+import os
 from models.square import Square
 
 
@@ -68,11 +69,14 @@ class Test_3(unittest.TestCase):
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
         Square.save_to_file([])
         self.assertEqual(Square.load_from_file(), [])
+        os.remove("Square.json")
         val = Square(1)
         Square.save_to_file([val])
         self.assertEqual(Square.load_from_file()[0].size, 1)
+        os.remove("Square.json")
         Square.save_to_file(None)
         self.assertEqual(Square.load_from_file(), [])
+        os.remove("Square.json")
 
     def test_square_display(self):
         """
