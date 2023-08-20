@@ -75,8 +75,8 @@ class Test_3(unittest.TestCase):
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
 
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_square_display(self):
-        sample4 = Square(1)
-        sample4.display()
-        assert self.getvalue() == '#\n'
+    def test_square_display():
+        with mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:
+            sample4 = Square(1)
+            sample4.display()
+        assert fake_stdout.getvalue() == "#\n"
