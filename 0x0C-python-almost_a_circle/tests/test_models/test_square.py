@@ -67,9 +67,9 @@ class Test_3(unittest.TestCase):
         self.assertEqual(sample2.to_dictionary(),
                          {'id': 4, 'size': 1, 'x': 2, 'y': 3})
         Square.save_to_file([])
-        a = Square.load_from_file()
+        self.assertEqual(Square.load_from_file(), [])
         Square.save_to_file(None)
-        self.assertEqual(Square.load_from_file(), a)
+        self.assertEqual(Square.load_from_file(), [])
         val = Square(1)
         Square.save_to_file([val])
         self.assertEqual(Square.load_from_file()[0].size, 1)
